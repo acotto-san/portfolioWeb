@@ -1,0 +1,10 @@
+.acerca-de.container{
+
+    display: flex;
+}
+
+app-banner{
+    width: 100%;
+
+
+}
