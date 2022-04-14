@@ -1,22 +1,25 @@
-.acerca-de-container {
+.grid-container-acercaDe {
     display: grid;
-    grid-gap: 1rem;
-    grid-template-areas: "datos" "datos";
-    grid-template-rows: 40rem auto;
+    grid-template-rows: 30rem 20rem;
+    /* grid-gap: 1rem; */
+    grid-template-areas:
+    'banner'
+    'datos';
     border-radius: 5%;
     overflow: hidden;
 }
 
-app-banner {
-    grid-area: "banner";
+.grid-item-banner {
+    grid-area: banner;
     display: flex;
     justify-content: center;
     border-radius: 5%;
     overflow: hidden;
 }
 
-app-datos-personales {
-    grid-area: "datos";
+.grid-item-datos {
+    grid-area: datos;
+    background-color: grey;
 }
 
 
