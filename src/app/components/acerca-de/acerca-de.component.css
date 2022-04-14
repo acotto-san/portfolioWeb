@@ -1,10 +1,31 @@
-.acerca-de.container{
-
-    display: flex;
+.acerca-de-container {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-areas: "datos" "datos";
+    grid-template-rows: 40rem auto;
+    border-radius: 5%;
+    overflow: hidden;
 }
 
-app-banner{
-    width: 100%;
+app-banner {
+    grid-area: "banner";
+    display: flex;
+    justify-content: center;
+    border-radius: 5%;
+    overflow: hidden;
+}
+
+app-datos-personales {
+    grid-area: "datos";
+}
 
 
+/* seccion de bordes para diferenciar */
+
+app-banner {
+    border: solid 1px red;
+}
+
+app-datos-personales {
+    border: solid 1px blue;
 }

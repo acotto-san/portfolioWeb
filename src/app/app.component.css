@@ -1,7 +1,33 @@
-.grid-container{
-    background-color: blanchedalmond;
+.grid-container {
     width: 80%;
     margin: auto;
-    height: 100vh;
+    background-color: blanchedalmond;
+    height: 100%;
+    display: grid;
+    grid-template-areas: "header" "acerca-de" "footer";
+    grid-template-rows: 7rem auto 10rem;
 }
 
+app-header {
+    width: 100%;
+    grid-area: "header";
+}
+
+app-acerca-de {
+    grid-area: "acerca-de";
+}
+
+app-footer {
+    grid-area: footer;
+}
+
+
+/* bordes */
+
+app-acerca-de {
+    border: solid 4px rgb(93, 209, 218);
+}
+
+app-footer {
+    border: solid 4px yellow;
+}

@@ -15,6 +15,8 @@ import { AsideComponent } from './components/aside/aside.component';
 import { LogoApComponent } from './components/logo-ap/logo-ap.component';
 import { SocialComponent } from './components/social/social.component';
 import { BannerComponent } from './components/banner/banner.component';
+import { DatosPersonalesComponent } from './components/datos-personales/datos-personales.component';
+import { AvatarComponent } from './components/avatar/avatar.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { BannerComponent } from './components/banner/banner.component';
     AsideComponent,
     LogoApComponent,
     SocialComponent,
-    BannerComponent
+    BannerComponent,
+    DatosPersonalesComponent,
+    AvatarComponent
   ],
   imports: [
     BrowserModule,

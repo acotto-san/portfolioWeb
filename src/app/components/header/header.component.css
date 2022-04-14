@@ -1,4 +1,4 @@
-#header-container{
+#header-container {
     background-color: grey;
     border: solid 1px black;
     display: flex;
@@ -6,10 +6,13 @@
     width: 100%;
     align-items: center;
     justify-content: space-between;
+    height: 100%;
 }
 
-app-social{
+app-social {}
 
-}
-app-logo-ap{
+app-logo-ap {}
+
+.btn-primary {
+    size: 13rem;
 }
