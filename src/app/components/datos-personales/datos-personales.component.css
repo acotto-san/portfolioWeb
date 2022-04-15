@@ -1,0 +1,20 @@
+.grid-container-datos-personales {
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-areas: "avatar datos-personales datos-personales datos-personales datos-personales" ;
+}
+
+.grid-item-avatar {
+    grid-area: avatar;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 50%;
+    border: solid ;
+}
+
+.grid-item-datos-personales {
+    grid-area: datos-personales;
+}
