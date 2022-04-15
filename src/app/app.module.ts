@@ -17,6 +17,7 @@ import { SocialComponent } from './components/social/social.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { DatosPersonalesComponent } from './components/datos-personales/datos-personales.component';
 import { AvatarComponent } from './components/avatar/avatar.component';
+import { MainCardComponent } from './components/main-card/main-card.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { AvatarComponent } from './components/avatar/avatar.component';
     SocialComponent,
     BannerComponent,
     DatosPersonalesComponent,
-    AvatarComponent
+    AvatarComponent,
+    MainCardComponent
   ],
   imports: [
     BrowserModule,
