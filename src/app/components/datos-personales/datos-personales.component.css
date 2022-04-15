@@ -20,7 +20,7 @@
 .grid-container-avatar-nombres {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: 3vh auto;
+    grid-template-rows: 1rem auto;
     grid-template-areas:
         'avatar'
         'nombres';
