@@ -36,7 +36,6 @@
     grid-area: avatar;
     display: flex;
     justify-content: center;
-    position: sticky;
 }
 
 .grid-item-nombres {
