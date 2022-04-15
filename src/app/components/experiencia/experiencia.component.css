@@ -5,7 +5,7 @@
     flex-direction: column;
 }
 
-#header-experiencias-laborales {
+.header-experiencias-laborales {
 
     position: relative;
     padding: 3rem 2rem 4rem;
