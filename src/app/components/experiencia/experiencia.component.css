@@ -1,0 +1,47 @@
+.app-experiencia-container {
+    font-size: 1.3rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#header-experiencias-laborales {
+
+    position: relative;
+    padding: 3rem 2rem 4rem;
+    padding-left: 10rem;
+
+}
+
+.grid-container-experiencia {
+    padding-left: 1rem;
+    margin: 2rem 4rem 2rem 0rem ;
+    display: grid;
+    grid-template-columns: 30rem auto;
+    grid-template-rows: 1fr;
+    grid-template-areas: 'logo empresa empresa empresa';
+    /* align-items: top; */
+    min-height: 17rem;
+
+}
+
+.grid-item-experiencia-logo {
+    grid-area: logo;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 2rem;
+    
+
+}
+.grid-item-experiencia-logo>img{
+    object-fit: contain;
+    max-width: 20rem;
+    max-height: 10rem;
+
+
+}
+
+.grid-item-experiencia-empresa {
+    grid-area: empresa;
+}

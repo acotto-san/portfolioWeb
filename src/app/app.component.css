@@ -11,21 +11,36 @@ app-header{
     margin: 3rem auto 3rem;
     height: 100%;
     display: grid;
-    grid-template-areas: "acerca-de" "footer";
-    grid-template-rows: auto 10rem;
+    grid-template-areas: "acerca-de" "experiencia" "educacion" "skills" "proyectos";
+    grid-template-rows: auto ;
     grid-gap: 1rem;
 }
 
 
 app-acerca-de {
-    grid-area: "acerca-de";
+    grid-area: acerca-de;
+}
+app-experiencia{
+    grid-area: experiencia;
+}
+app-educacion{
+    grid-area: educacion;
+}
+app-skills{
+    grid-area: skills;
+}
+app-proyectos{
+    grid-area: proyectos;
+}
+
+app-acerca-de,
+app-experiencia,
+app-educacion,
+app-skills,
+app-proyectos{    
     border: 1px solid rgba(0, 0, 0, 0.186);
     border-radius: 20px;
     overflow: hidden;
-}
-
-app-footer {
-    grid-area: footer;
 }
 
 footer{
