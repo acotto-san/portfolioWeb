@@ -1,0 +1,13 @@
+.footer-bar{
+    height: 100%;
+    width: 100vw;
+    box-shadow: 1px 10px 20px black;
+    display: flex;
+
+}
+
+.footer-container{
+    margin: auto;
+    width: 80%;
+    max-width: 1200px;
+}
