@@ -1,6 +1,6 @@
 .grid-container-acercaDe {
     display: grid;
-    grid-template-rows: 30rem 20rem;
+    grid-template-rows: 30rem auto;
     /* grid-gap: 1rem; */
     grid-template-areas:
     'banner'
@@ -17,7 +17,7 @@
     overflow: hidden;
 }
 
-.grid-item-datos {
+.grid-item-datos-personales {
     grid-area: datos;
     background-color: grey;
 }

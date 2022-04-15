@@ -1,20 +1,61 @@
 .grid-container-datos-personales {
     display: grid;
     height: 100%;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(1, 1fr);
-    grid-template-areas: "avatar datos-personales datos-personales datos-personales datos-personales" ;
+    grid-template-areas: "avatar  datos-personales datos-personales datos-personales";
 }
 
-.grid-item-avatar {
+.grid-item-avatar-nombres {
     grid-area: avatar;
     display: flex;
     justify-content: center;
     overflow: hidden;
-    border-radius: 50%;
-    border: solid ;
+
+
 }
 
-.grid-item-datos-personales {
+.grid-item-sobre-mi {
     grid-area: datos-personales;
 }
+
+.grid-container-avatar-nombres {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas:
+    'avatar'
+    'nombres' ;
+
+
+}
+
+.grid-item-avatar {
+    position: absolute;
+    margin-top: -7rem;
+    margin-left: 2rem;
+    grid-area: avatar;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.grid-item-nombres {
+    grid-area: nombres;
+}
+
+
+
+.datos-personales-avatar {
+    height: 10rem;
+    border-radius: 50%;
+    border: solid;
+    overflow: hidden;
+    background-color: white;
+    justify-content: center;
+}
+
+.datos-personales-nombres {}
+
+.datos-personales-sobre-mi {}
