@@ -10,50 +10,50 @@
     grid-area: avatar;
     display: flex;
     justify-content: center;
-    overflow: hidden;
-
-
 }
 
 .grid-item-sobre-mi {
     grid-area: datos-personales;
+    padding: 3rem 2rem 2.5rem 1rem;
 }
 
 .grid-container-avatar-nombres {
     display: grid;
-    grid-template-columns: repeat(1,1fr);
-    grid-template-rows: auto auto;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 3vh auto;
     grid-template-areas:
-    'avatar'
-    'nombres' ;
+        'avatar'
+        'nombres';
+    text-align: center;
+    justify-items: center;
 
 
 }
 
 .grid-item-avatar {
-    position: absolute;
-    margin-top: -7rem;
-    margin-left: 2rem;
+    position: relative;
+    margin-top: -8rem;
     grid-area: avatar;
     display: flex;
     justify-content: center;
-
-
+    position: sticky;
 }
 
 .grid-item-nombres {
     grid-area: nombres;
+    padding: 7.5rem 2rem 0rem 2rem;
 }
 
 
 
 .datos-personales-avatar {
-    height: 10rem;
+    height: 15rem;
+    width: 15rem;
     border-radius: 50%;
-    border: solid;
+    border: solid 3px white;
     overflow: hidden;
     background-color: white;
-    justify-content: center;
+    box-shadow: 0px 1px 15px;
 }
 
 .datos-personales-nombres {}

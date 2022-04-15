@@ -1,12 +1,19 @@
-#header-container {
-    background-color: grey;
-    border: solid 1px black;
+.header-bar{
     display: flex;
     flex-direction: row;
     width: 100%;
+    background-color: grey;
+    justify-content: center;
+
+}
+#header-container {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
     align-items: center;
     justify-content: space-between;
     height: 100%;
+
 }
 
 app-social {}

@@ -1,33 +1,27 @@
 .grid-container {
     width: 80%;
-    margin: auto;
-    background-color: blanchedalmond;
+    margin: 3rem auto 3rem;
     height: 100%;
     display: grid;
-    grid-template-areas: "header" "acerca-de" "footer";
-    grid-template-rows: 7rem auto 10rem;
+    grid-template-areas: "acerca-de" "footer";
+    grid-template-rows:  auto 10rem;
+    grid-gap: 1rem;
 }
 
-app-header {
+.app-header{
+
+    top: 0px;
+    left: 0px;
     width: 100%;
-    grid-area: "header";
 }
 
 app-acerca-de {
     grid-area: "acerca-de";
+    border: 1px solid rgba(0, 0, 0, 0.186);
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 app-footer {
     grid-area: footer;
-}
-
-
-/* bordes */
-
-app-acerca-de {
-    border: solid 4px rgb(93, 209, 218);
-}
-
-app-footer {
-    border: solid 4px yellow;
 }
