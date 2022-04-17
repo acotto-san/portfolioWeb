@@ -13,7 +13,7 @@ app-header{
     display: grid;
     grid-template-areas: "acerca-de" "experiencia" "educacion" "skills" "proyectos";
     grid-template-rows: auto ;
-    grid-gap: 1rem;
+    grid-gap: 3rem;
 }
 
 

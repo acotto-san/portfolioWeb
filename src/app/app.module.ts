@@ -18,6 +18,7 @@ import { BannerComponent } from './components/banner/banner.component';
 import { DatosPersonalesComponent } from './components/datos-personales/datos-personales.component';
 import { AvatarComponent } from './components/avatar/avatar.component';
 import { MainCardComponent } from './components/main-card/main-card.component';
+import { ProgressCircleComponent } from './components/skills/progress-circle/progress-circle.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { MainCardComponent } from './components/main-card/main-card.component';
     BannerComponent,
     DatosPersonalesComponent,
     AvatarComponent,
-    MainCardComponent
+    MainCardComponent,
+    ProgressCircleComponent
   ],
   imports: [
     BrowserModule,
