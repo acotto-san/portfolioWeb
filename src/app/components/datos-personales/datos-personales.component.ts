@@ -10,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
 export class DatosPersonalesComponent implements OnInit {
   
   aboutMeParagraph? : string ;
+  aboutMeTextAreaDisplayStatus? : string;
+
 
 
 
@@ -19,5 +21,18 @@ export class DatosPersonalesComponent implements OnInit {
 
   ngOnInit(): void {
     this.aboutMeParagraph = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi veritatis explicabo ut alias laboriosam dolores similique ex quam. Esse commodi error consequuntur enim assumenda architecto quidem rerum ipsa nemo quia unde natus ad nesciunt reprehenderit fugit, numquam, vitae itaque. Eligendi?"
+    this.aboutMeTextAreaDisplayStatus = 'none';
+
+  }
+
+
+  editAboutMeParagraph(){
+
+    if (this.aboutMeTextAreaDisplayStatus == 'block'){
+      this.aboutMeTextAreaDisplayStatus = 'none';
+    } else if (this.aboutMeTextAreaDisplayStatus == 'none'){
+      this.aboutMeTextAreaDisplayStatus = 'block';
+    }
+  
   }
 }

@@ -13,11 +13,12 @@
     </div>
 
     <div class="grid-item-sobre-mi datos-personales-sobre-mi">
-        <button class="btn">Edit</button>
+        <button class="btn" (click)="editAboutMeParagraph()"
+        style="float: right;">Edit</button>
         <h2>Sobre mi</h2>
         <p id="about-me-paragraph">{{aboutMeParagraph}}</p>
         <textarea name="about-me-tetxtarea" id="" cols="60" rows="10" 
-        id="about-me-textarea" [ngStyle]="{'display':none}"></textarea>
+        id="about-me-textarea" [ngStyle]="{'display':aboutMeTextAreaDisplayStatus, 'width':'100%'}"></textarea>
     
     
     </div>
