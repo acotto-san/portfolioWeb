@@ -22,7 +22,7 @@
 .grid-container-avatar-nombres {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: 1rem auto;
+    grid-template-rows: 5rem auto;
     grid-template-areas:
         'avatar'
         'nombres';
@@ -48,8 +48,8 @@
 
 
 .datos-personales-avatar {
-    height: 15rem;
-    width: 15rem;
+    height: 17rem;
+    width: 17rem;
     border-radius: 50%;
     border: solid 3px white;
     overflow: hidden;
@@ -57,6 +57,3 @@
     box-shadow: 0px 1px 15px;
 }
 
-.datos-personales-nombres {}
-
-.datos-personales-sobre-mi {}
