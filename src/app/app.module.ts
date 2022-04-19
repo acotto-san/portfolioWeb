@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { EducacionComponent } from './components/educacion/educacion.component';
-import { SkillsComponent } from './components/skills/skills.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { LoginComponent } from './components/login/login.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -30,7 +29,6 @@ import { CvSeccionComponent } from './seccion/cv-seccion/cv-seccion.component';
     HeaderComponent,
     ExperienciaComponent,
     EducacionComponent,
-    SkillsComponent,
     ProyectosComponent,
     LoginComponent,
     FooterComponent,

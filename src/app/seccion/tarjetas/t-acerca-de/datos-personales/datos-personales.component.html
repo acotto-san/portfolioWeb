@@ -5,21 +5,22 @@
         </app-avatar>
 
         <div class="grid-item-nombres">
-            <h2>Hermenejildo Morales de las Rosas Campos</h2>
+            <h2>{{profileName}}</h2>
             <br>
-            <p>Ultra novedosa e interesante profesion </p>
+            <p>{{profileJob}}</p>
         </div>
 
     </div>
 
     <div class="grid-item-sobre-mi">
         <div class="grid-item-sobre-mi-header">
-            <h2>Sobre mi</h2>
+            <h2>{{aboutMeHeader}}</h2>
             <button class="btn" (click)="editAboutMeParagraph()">Edit</button>
             
         </div>
         
-        <p id="about-me-paragraph">{{aboutMeParagraph}}</p>
+        <p id="about-me-paragraph"  
+        >{{aboutMeParagraph}}</p>
         <textarea name="about-me-tetxtarea" id="" cols="60" rows="10" 
         id="about-me-textarea" [ngStyle]="{'display':aboutMeTextAreaDisplayStatus, 'width':'100%'}"></textarea>
     

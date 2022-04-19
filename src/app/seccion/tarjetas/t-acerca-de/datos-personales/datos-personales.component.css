@@ -57,11 +57,23 @@ position: absolute;
 
 .grid-item-nombres {
     grid-area: nombres;
-    padding: 35% 2rem 0rem 2rem;
+    padding: 37% 2rem 0rem 2rem;
     align-self: flex-start;
 }
 
 .grid-item-sobre-mi-header{
     display: flex;
     justify-content: space-between;
+
+}
+
+
+@keyframes aparicion {
+    from{
+        filter: blur(0px)
+    }
+    to{
+        filter: blur(6px)
+    }
+    
 }
