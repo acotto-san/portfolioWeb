@@ -1,0 +1,46 @@
+.contenedor-tarjetas{
+    width: 80%;
+    max-width: 1200px;
+    margin: 3rem auto 3rem;
+    height: 100%;
+    display: grid;
+    grid-template-areas: "acerca-de" "experiencia" "educacion" "skills" "proyectos";
+    grid-template-rows: auto ;
+    grid-gap: 3rem;
+}
+
+.tarjeta{
+    border: 1px solid rgba(0, 0, 0, 0.186);
+    border-radius: 20px;
+    overflow: hidden;
+    font-size: 1.3rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta-header{
+    position: relative;
+    padding: 3rem 2rem 4rem;
+    padding-left: 10rem;
+
+}
+.tarjeta-contenido{
+    margin: 0rem 4rem 2rem 4rem;
+}
+
+app-t-acerca-de{
+    grid-area: acerca-de ;
+}
+app-t-experiencia{
+    grid-area: experiencia ;
+}
+app-t-educacion{
+    grid-area: educacion ;
+}
+app-t-skills{
+    grid-area: skills ;
+}
+app-t-proyectos{
+    grid-area: proyectos ;
+}

@@ -1,55 +1,53 @@
-.grid-container-datos-personales {
+.contener-datos-personales {
     font-size: 1.3rem;
     margin: 0rem 4rem 2rem 4rem;
     display: grid;
     height: 100%;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(1, 1fr);
-    grid-template-areas: "avatar  datos-personales datos-personales datos-personales";
+    grid-template-areas: "avatar  datos-personales datos-personales datos-personales datos-personales ";
 }
 
-.grid-item-avatar-nombres {
+.seccion-izquierda {
     grid-area: avatar;
     display: flex;
     justify-content: center;
 }
 
 .grid-item-sobre-mi {
+    display: flex;
+    flex-direction: column;
     grid-area: datos-personales;
     padding: 3rem 2rem 2.5rem 1rem;
 }
 
-.grid-container-avatar-nombres {
+.contenedor-izquierda {
+    position:relative;
+    height: 100%;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: 5rem auto;
+    grid-template-rows: 2rem auto;
     grid-template-areas:
         'avatar'
         'nombres';
     text-align: center;
+    align-items: flex-start;
     justify-items: center;
-
+    
 
 }
 
 .grid-item-avatar {
-    position: relative;
-    margin-top: -8rem;
+position: absolute;
+    margin-top: -10rem;
     grid-area: avatar;
     display: flex;
     justify-content: center;
 }
-
-.grid-item-nombres {
-    grid-area: nombres;
-    padding: 7.5rem 2rem 0rem 2rem;
-}
-
-
-
-.datos-personales-avatar {
-    height: 17rem;
-    width: 17rem;
+.estilo-avatar {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    max-width: 20rem;
     border-radius: 50%;
     border: solid 3px white;
     overflow: hidden;
@@ -57,3 +55,13 @@
     box-shadow: 0px 1px 15px;
 }
 
+.grid-item-nombres {
+    grid-area: nombres;
+    padding: 35% 2rem 0rem 2rem;
+    align-self: flex-start;
+}
+
+.grid-item-sobre-mi-header{
+    display: flex;
+    justify-content: space-between;
+}

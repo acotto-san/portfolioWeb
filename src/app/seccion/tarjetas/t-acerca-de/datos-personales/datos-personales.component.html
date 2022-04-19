@@ -1,10 +1,10 @@
-<div class="grid-container-datos-personales">
-    <div class="grid-item-avatar-nombres grid-container-avatar-nombres">
+<div class="contener-datos-personales">
+    <div class="seccion-izquierda contenedor-izquierda">
 
-        <app-avatar class="grid-item-avatar datos-personales-avatar">
+        <app-avatar class="grid-item-avatar estilo-avatar">
         </app-avatar>
 
-        <div class="grid-item-nombres datos-personales-nombres">
+        <div class="grid-item-nombres">
             <h2>Hermenejildo Morales de las Rosas Campos</h2>
             <br>
             <p>Ultra novedosa e interesante profesion </p>
@@ -12,10 +12,13 @@
 
     </div>
 
-    <div class="grid-item-sobre-mi datos-personales-sobre-mi">
-        <button class="btn" (click)="editAboutMeParagraph()"
-        style="float: right;">Edit</button>
-        <h2>Sobre mi</h2>
+    <div class="grid-item-sobre-mi">
+        <div class="grid-item-sobre-mi-header">
+            <h2>Sobre mi</h2>
+            <button class="btn" (click)="editAboutMeParagraph()">Edit</button>
+            
+        </div>
+        
         <p id="about-me-paragraph">{{aboutMeParagraph}}</p>
         <textarea name="about-me-tetxtarea" id="" cols="60" rows="10" 
         id="about-me-textarea" [ngStyle]="{'display':aboutMeTextAreaDisplayStatus, 'width':'100%'}"></textarea>

@@ -1,4 +1,4 @@
-.grid-container-acercaDe {
+.tarjeta-acerca-de{
     display: grid;
     grid-template-rows: 30rem auto;
     grid-template-areas:
@@ -7,13 +7,14 @@
 
 }
 
-.grid-item-banner {
+app-banner{
     grid-area: banner;
     display: flex;
     justify-content: center;
-    overflow: hidden;
+
 }
 
-.grid-item-datos-personales {
+app-datos-personales{
     grid-area: datos;
+
 }
