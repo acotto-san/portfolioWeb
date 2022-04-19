@@ -1,7 +1,7 @@
 .experiencia-laboral{
     display: grid;
-    grid-template-columns:repeat(4,1fr);
-    grid-template-areas: 'logo experiencia experiencia experiencia';
+    grid-template-columns:0.25fr 0.75fr;
+    grid-template-areas: 'logo experiencia';
     min-height: 17rem;
 }
 

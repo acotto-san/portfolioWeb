@@ -1,0 +1,18 @@
+.contenedor-certificacion{
+    display: grid;
+    grid-template-columns: 0.25fr 0.75fr;
+    grid-template-rows: 90px;
+    grid-gap: 1rem;
+}
+
+.certificacion-logo{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+       
+}
+.certificacion-logo>img{
+    width: 100%;
+    max-width: 15rem;
+    object-fit: contain;
+}

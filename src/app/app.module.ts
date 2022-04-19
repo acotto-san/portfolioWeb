@@ -16,7 +16,7 @@ import { SocialComponent } from './components/social/social.component';
 import { BannerComponent } from './seccion/tarjetas/t-acerca-de/banner/banner.component';
 import { DatosPersonalesComponent } from './seccion/tarjetas/t-acerca-de/datos-personales/datos-personales.component';
 import { AvatarComponent } from './seccion/tarjetas/t-acerca-de/avatar/avatar.component';
-import { ProgressCircleComponent } from './components/skills/progress-circle/progress-circle.component';
+import { ProgressCircleComponent } from './seccion/tarjetas/t-skills/progress-circle/progress-circle.component';
 import { TAcercaDeComponent } from './seccion/tarjetas/t-acerca-de/t-acerca-de.component';
 import { TExperienciaComponent } from './seccion/tarjetas/t-experiencia/t-experiencia.component';
 import { TEducacionComponent } from './seccion/tarjetas/t-educacion/t-educacion.component';
