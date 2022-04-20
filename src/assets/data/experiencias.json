@@ -1,0 +1,20 @@
+[
+    {
+        "nombreEmpresa":"Yoizen",
+        "ubicacionEmpresa":"CABA",
+        "fechasEmpresa":"fechas en la empresa",
+        "logoEmpresa":"base64",
+        "puestos":[
+            {
+                "puesto":"QA lead",
+                "fechasPuesto":2021,
+                "descripcionPuesto":"hago blah y blah"
+            },
+            {
+                "puesto":"QA tester",
+                "fechasPuesto":2020,
+                "descripcionPuesto":"tengo varias tareas"
+            }
+        ]
+    }
+]

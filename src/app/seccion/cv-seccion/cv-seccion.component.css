@@ -14,7 +14,7 @@
 
 .tarjeta{
     border: 1px solid rgba(0, 0, 0, 0.186);
-    border-radius: 20px;
+    border-radius: 1.3rem;
     overflow: hidden;
     font-size: 1.3rem;
     background-color: white;

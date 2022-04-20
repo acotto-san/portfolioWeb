@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { EducacionComponent } from './components/educacion/educacion.component';
-import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { LoginComponent } from './components/login/login.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AsideComponent } from './components/aside/aside.component';
@@ -30,7 +30,6 @@ import { TarjetaComponent } from './seccion/tarjetas/tarjeta/tarjeta.component';
     HeaderComponent,
     ExperienciaComponent,
     EducacionComponent,
-    ProyectosComponent,
     LoginComponent,
     FooterComponent,
     AsideComponent,
@@ -49,6 +48,7 @@ import { TarjetaComponent } from './seccion/tarjetas/tarjeta/tarjeta.component';
     TarjetaComponent,
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule
   ],

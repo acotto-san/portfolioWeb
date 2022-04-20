@@ -19,10 +19,11 @@
             
         </div>
         
-        <p id="about-me-paragraph"  
+        <p id="about-me-paragraph"  [ngStyle]="{'display':aboutMeParagraphDisplay}"
         >{{aboutMeParagraph}}</p>
         <textarea name="about-me-tetxtarea" id="" cols="60" rows="10" 
-        id="about-me-textarea" [ngStyle]="{'display':aboutMeTextAreaDisplayStatus, 'width':'100%'}"></textarea>
+        id="about-me-textarea" [ngStyle]="{'display':aboutMeTextAreaDisplay, 'width':'100%'}" 
+        (focusout)="cerrarTextArea()" [(ngModel)]=aboutMeParagraph></textarea>
     
     
     </div>
