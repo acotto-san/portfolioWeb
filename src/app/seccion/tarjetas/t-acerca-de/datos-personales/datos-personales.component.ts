@@ -52,5 +52,4 @@ export class DatosPersonalesComponent implements OnInit {
     this.aboutMeParagraphDisplay = "none";
   }
 
-  
 }
