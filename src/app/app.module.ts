@@ -22,6 +22,7 @@ import { TEducacionComponent } from './seccion/tarjetas/t-educacion/t-educacion.
 import { TSkillsComponent } from './seccion/tarjetas/t-skills/t-skills.component';
 import { TProyectosComponent } from './seccion/tarjetas/t-proyectos/t-proyectos.component';
 import { CvSeccionComponent } from './seccion/cv-seccion/cv-seccion.component';
+import { TarjetaComponent } from './seccion/tarjetas/tarjeta/tarjeta.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { CvSeccionComponent } from './seccion/cv-seccion/cv-seccion.component';
     TEducacionComponent,
     TSkillsComponent,
     TProyectosComponent,
-    CvSeccionComponent
+    CvSeccionComponent,
+    TarjetaComponent,
   ],
   imports: [
     BrowserModule,
