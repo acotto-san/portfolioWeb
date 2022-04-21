@@ -10,6 +10,6 @@ export class DataserviceService {
   constructor(private http:HttpClient) { }
 
   getDatos():Observable<any>{
-    return this.http.get('./assets/data/data.json');
+    return this.http.get('./assets/data/experiencias.json');
   }
 }
