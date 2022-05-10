@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { DataserviceService } from '../../../dataservice.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { DataserviceService } from '../../../persona.service';
 
 @Component({
   selector: 'app-t-experiencia',
@@ -7,13 +7,13 @@ import { DataserviceService } from '../../../dataservice.service';
   styleUrls: ['./t-experiencia.component.css','../../cv-seccion/cv-seccion.component.css']
 })
 export class TExperienciaComponent implements OnInit { 
-  experienciasJson?:any;
-  logoEmpresa?:string;
+  experiencias?:any;
+  @Input() curriculum?:any;
 
   constructor(private datos:DataserviceService) { }
 
   ngOnInit(): void {
-    this.datos.getData('http://localhost:8080/persona/82').subscribe(data => {this.experienciasJson = data.curriculum.experiencias});
+    
   }
   
 }
