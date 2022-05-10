@@ -12,13 +12,14 @@
             <div class="col-9 t-experiencia-empresa">
                 <div class="row t-experiencia-empresa-header">
                     <h2>{{experiencia.nombreEmpresa}}</h2>
-                    <p>{{experiencia.ubicacionEmpresa}}</p>
-                    <h6>{{experiencia.fechasEmpresa}}</h6>
+                    <p>{{experiencia.ubicacion}}</p>
+                    <h6>{{experiencia.anioComienzo}}</h6>
                 </div>
                 <div *ngFor="let puesto of experiencia.puestos" class="row t-experiencia-puesto">
-                    <h4>{{puesto.puesto}}</h4>
-                    <h6 >{{puesto.fechasPuesto}}</h6>
-                    <p>{{puesto.descripcionPuesto}}</p>
+                    <h4>{{puesto.nombre}}</h4>
+                    <p>ID DE EXPERIENCIA PUESTO {{puesto.id}}</p>
+                    <h6 >{{puesto.anioComienzo}}</h6>
+                    <p>{{puesto.descripcion}}</p>
                 </div>
             </div>
         </li>

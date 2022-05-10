@@ -9,7 +9,7 @@ export class DataserviceService {
 
   constructor(private http:HttpClient) { }
 
-  getDatos():Observable<any>{
-    return this.http.get('http://localhost:8080/hola');
+  getData(endpoint:string):Observable<any>{
+    return this.http.get(endpoint);
   }
 }
