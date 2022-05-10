@@ -1,3 +1,4 @@
+import { ExperienciaPuesto } from "./experienciaPuesto";
 import { Imagen } from "./imagen";
 
 export interface ExperienciaLaboral{
@@ -9,5 +10,5 @@ export interface ExperienciaLaboral{
     anioComienzo: number;
     mesFin: number;
     anioFin: number;
-    puestos: ExperienciaLaboral[]
+    puestos: ExperienciaPuesto[]
 }

@@ -1,8 +1,8 @@
 <div class="main-container">
-    <app-t-acerca-de class="tarjeta"></app-t-acerca-de>
-    <app-t-experiencia class="tarjeta" [curriculum]="persona?.curriculum"></app-t-experiencia>
-    <app-t-educacion class="tarjeta"></app-t-educacion>
-    <app-t-skills class="tarjeta"></app-t-skills>
-    <app-t-proyectos class="tarjeta"></app-t-proyectos>
-    <p>{{persona?.nombre}}</p>
+  <!-- <app-t-acerca-de class="tarjeta"[banner]="curriculum?.banner"></app-t-acerca-de> -->
+    <app-t-banner class="tarjeta" [banner]="curriculum?.banner"></app-t-banner>
+    <app-t-experiencia class="tarjeta" [experiencias]="curriculum?.experiencias"></app-t-experiencia>
+    <app-t-educacion class="tarjeta"[estudios]="curriculum?.estudios"></app-t-educacion>
+    <app-t-skills class="tarjeta"[skills]="curriculum?.skills"></app-t-skills>
+    <app-t-proyectos class="tarjeta"[proyectos]="curriculum?.proyectos"></app-t-proyectos>
 </div>

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ExperienciaLaboral } from 'src/app/interfaces/experienciaLaboral';
 import { DataserviceService } from '../../../persona.service';
 
 @Component({
@@ -7,8 +8,7 @@ import { DataserviceService } from '../../../persona.service';
   styleUrls: ['./t-experiencia.component.css','../../cv-seccion/cv-seccion.component.css']
 })
 export class TExperienciaComponent implements OnInit { 
-  experiencias?:any;
-  @Input() curriculum?:any;
+  @Input() experiencias?:ExperienciaLaboral[];
 
   constructor(private datos:DataserviceService) { }
 

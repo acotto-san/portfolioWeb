@@ -1,5 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
+import { Curriculum } from 'src/app/interfaces/curriculum';
 import { Persona } from 'src/app/interfaces/persona';
 import { DataserviceService } from '../../persona.service';
 
@@ -9,22 +10,12 @@ import { DataserviceService } from '../../persona.service';
   styleUrls: ['./cv-seccion.component.css']
 })
 export class CvSeccionComponent implements OnInit {
-  public persona?: Persona;
+  @Input() curriculum?:Curriculum;
 
-  constructor(private personaService:DataserviceService) { }
+  constructor() { }
 
   ngOnInit(){
-    this.getPersona();
+
   }
 
-  public getPersona(): void{
-    this.personaService.getPersona().subscribe(
-      (response: Persona) => {
-        this.persona = response;
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    )
-  }
 }

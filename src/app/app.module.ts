@@ -24,6 +24,7 @@ import { TSkillsComponent } from './seccion/tarjetas/t-skills/t-skills.component
 import { TProyectosComponent } from './seccion/tarjetas/t-proyectos/t-proyectos.component';
 import { CvSeccionComponent } from './seccion/cv-seccion/cv-seccion.component';
 import { TarjetaComponent } from './seccion/tarjetas/tarjeta/tarjeta.component';
+import { TBannerComponent } from './seccion/tarjetas/t-banner/t-banner.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { TarjetaComponent } from './seccion/tarjetas/tarjeta/tarjeta.component';
     TProyectosComponent,
     CvSeccionComponent,
     TarjetaComponent,
+    TBannerComponent,
   ],
   imports: [
     HttpClientModule,

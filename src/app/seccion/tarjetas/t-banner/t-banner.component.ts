@@ -2,35 +2,24 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Banner } from 'src/app/interfaces/banner';
 
 @Component({
-  selector: 'app-datos-personales',
-  templateUrl: './datos-personales.component.html',
-  styleUrls: ['./datos-personales.component.css']
+  selector: 'app-t-banner',
+  templateUrl: './t-banner.component.html',
+  styleUrls: ['./t-banner.component.css']
 })
-
-
-export class DatosPersonalesComponent implements OnInit {
-  @Input() banner?:Banner;
-
-  sobreMiHeader? : string ;
-  parrafoSobreMiDisplayStatus? : string ;
-  sobreMiTextAreaDisplayStatus? : string;
-  aboutMeHeader? : string ;
-  profileName? : string ;
-  profileJob? : string ;
-
-
-
-  constructor() {
-    
-   }
-
+export class TBannerComponent implements OnInit {
+@Input() banner?:Banner;
+sobreMiHeader? : string ;
+parrafoSobreMiDisplayStatus? : string;
+sobreMiTextAreaDisplayStatus?:string;
+sobreMiTextAreaContenido?:string;
+  constructor() { }
+  
   ngOnInit(): void {
-    this.parrafoSobreMiDisplayStatus = 'initial'
+    this.sobreMiHeader = 'Sobre Mi';
+    this.parrafoSobreMiDisplayStatus= 'initial';
     this.sobreMiTextAreaDisplayStatus = 'none';
- 
-
+    this.sobreMiTextAreaContenido = this.banner?.descripcionPersonal;
   }
-
 
   editAboutMeParagraph(){
 
@@ -39,7 +28,7 @@ export class DatosPersonalesComponent implements OnInit {
     } else if (this.sobreMiTextAreaDisplayStatus == 'none'){
       this.mostratTextArea();
 
-    }
+    } 
   }
 
   cerrarTextArea(){

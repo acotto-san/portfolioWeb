@@ -5,9 +5,9 @@
     <ul class="row t-content">
 
 
-        <li *ngFor="let experiencia of curriculum.experiencias" class="row t-content-item">
+        <li *ngFor="let experiencia of experiencias" class="row t-content-item">
             <div class="col-3 t-content-item-logo">
-                <img [src]='experiencia.logoEmpresa' alt="logo de empresa">
+                <img [src]='experiencia.logoImg.fuente' alt="logo de empresa">
             </div>
             <div class="col-9 t-experiencia-empresa">
                 <div class="row t-experiencia-empresa-header">
@@ -17,17 +17,10 @@
                 </div>
                 <div *ngFor="let puesto of experiencia.puestos" class="row t-experiencia-puesto">
                     <h4>{{puesto.nombre}}</h4>
-                    <h6 >{{puesto.anioComienzo}}</h6>
+                    <h6 >{{puesto.mesComienzo}}/{{puesto.anioComienzo}} - {{puesto.mesFin}}/{{puesto.anioFin}}</h6>
                     <p>{{puesto.descripcion}}</p>
                 </div>
             </div>
         </li>
-        
     </ul>
 </div>
-<!-- 
-<div *ngFor="let subseccion of experienciasJson">
-    <h3>{{subseccion.nombreEmpresa}}</h3>
-    <p>{{subseccion.contenido}}</p>
-
-</div> -->

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Proyecto } from 'src/app/interfaces/proyecto';
 
 @Component({
   selector: 'app-t-proyectos',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./t-proyectos.component.css','../../cv-seccion/cv-seccion.component.css']
 })
 export class TProyectosComponent implements OnInit {
+@Input() proyectos?:Proyecto[];
 
   constructor() { }
 

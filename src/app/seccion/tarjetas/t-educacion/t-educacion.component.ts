@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ExperienciaEducativa } from 'src/app/interfaces/experienciaEducativa';
 
 @Component({
   selector: 'app-t-educacion',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./t-educacion.component.css','../../cv-seccion/cv-seccion.component.css']
 })
 export class TEducacionComponent implements OnInit {
-
+@Input() estudios?:ExperienciaEducativa[];
   constructor() { }
 
   ngOnInit(): void {
