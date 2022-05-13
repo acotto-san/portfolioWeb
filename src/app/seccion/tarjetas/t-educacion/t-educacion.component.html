@@ -1,27 +1,3 @@
-<!-- <h2 class="tarjeta-header">Estudios y Certificaciones</h2>
-<div class="tarjeta-contenido">
-    <div class="contenedor-certificacion">
-        <div class="certificacion-logo">
-
-        </div>
-        <div class="datos-certificacion">
-            <h4>Nombre de la institucion</h4>
-            <p>titulo conseguido</p>
-            <h6>Fecha obtenido/en curso</h6>
-        </div>
-    </div>
-    <div class="contenedor-certificacion">
-        <div class="certificacion-logo">
-            <img src="../../../assets/mock_logo.png" alt="logo institucion">
-        </div>
-        <div class="datos-certificacion">
-            <h4>Nombre de la institucion</h4>
-            <p>titulo conseguido</p>
-            <h6>Fecha obtenido/en curso</h6>
-        </div>
-    </div>
-</div> -->
-
 <div class="container t-container">
 
     <div class="row t-header">
@@ -31,19 +7,24 @@
     </div>
 
     <ul class="row t-content">
+        <button class="edit-on-t-educacion" (click)="show=!show">Editar</button>
 
-        <li class="row t-content-item">
+        <li *ngFor="let estudio of estudios" class="row t-content-item">
 
             <div class="col-3 t-content-item-logo">
-                <img src="../../../assets/mock_logo.png" alt="logo institucion">
+                <img src="{{estudio.credencialImg.fuente}}" alt="logo institucion">
             </div>
+
+
             <div class="col-9 t-estudio">
-                <h4>Nombre de la institucion</h4>
-                <p>titulo conseguido</p>
-                <h6>Fecha obtenido/en curso</h6>
+                <h4>{{estudio.titulo}}</h4>
+                <button class="edit-estudio" *ngIf="show">cambiar</button>
+                <p>{{estudio.institucion}}</p>
+                <h6>{{estudio.mesComienzo}}/{{estudio.anioComienzo}} - {{estudio.mesFin}}/{{estudio.anioFin}}</h6>
+                <p>{{estudio.credencial}}</p>
+                <p>{{estudio.linkValidacion}}</p>
             </div>
-
-
+            
         </li>
 
     </ul>

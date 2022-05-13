@@ -13,8 +13,8 @@
                 <div class="row t-experiencia-empresa-header">
                     <h2>{{experiencia.nombreEmpresa}}</h2>
                     <p>{{experiencia.ubicacion}}</p>
-                    <h6>{{experiencia.anioComienzo}}</h6>
-                </div>
+                    <h6>{{experiencia.mesComienzo}}/{{experiencia.anioComienzo}} - {{experiencia.mesFin}}/{{experiencia.anioFin}}</h6>
+                </div>a
                 <div *ngFor="let puesto of experiencia.puestos" class="row t-experiencia-puesto">
                     <h4>{{puesto.nombre}}</h4>
                     <h6 >{{puesto.mesComienzo}}/{{puesto.anioComienzo}} - {{puesto.mesFin}}/{{puesto.anioFin}}</h6>

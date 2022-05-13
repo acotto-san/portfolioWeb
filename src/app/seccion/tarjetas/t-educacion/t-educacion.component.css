@@ -16,3 +16,18 @@
     max-width: 15rem;
     object-fit: contain;
 }
+
+.edit-on-t-educacion{
+    position: block;
+    top: 20px;
+    right: 20px;
+    display: inline;
+}
+
+.edit-estudio{
+    color: blue;
+    position:relative;
+    top: 20px;
+    right: 20px;
+}
+

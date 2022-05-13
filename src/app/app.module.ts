@@ -13,11 +13,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AsideComponent } from './components/aside/aside.component';
 import { LogoApComponent } from './components/logo-ap/logo-ap.component';
 import { SocialComponent } from './components/social/social.component';
-import { BannerComponent } from './seccion/tarjetas/t-acerca-de/banner/banner.component';
-import { DatosPersonalesComponent } from './seccion/tarjetas/t-acerca-de/datos-personales/datos-personales.component';
-import { AvatarComponent } from './seccion/tarjetas/t-acerca-de/avatar/avatar.component';
 import { ProgressCircleComponent } from './seccion/tarjetas/t-skills/progress-circle/progress-circle.component';
-import { TAcercaDeComponent } from './seccion/tarjetas/t-acerca-de/t-acerca-de.component';
 import { TExperienciaComponent } from './seccion/tarjetas/t-experiencia/t-experiencia.component';
 import { TEducacionComponent } from './seccion/tarjetas/t-educacion/t-educacion.component';
 import { TSkillsComponent } from './seccion/tarjetas/t-skills/t-skills.component';
@@ -37,11 +33,7 @@ import { TBannerComponent } from './seccion/tarjetas/t-banner/t-banner.component
     AsideComponent,
     LogoApComponent,
     SocialComponent,
-    BannerComponent,
-    DatosPersonalesComponent,
-    AvatarComponent,
     ProgressCircleComponent,
-    TAcercaDeComponent,
     TExperienciaComponent,
     TEducacionComponent,
     TSkillsComponent,

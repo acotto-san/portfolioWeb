@@ -16,7 +16,7 @@ export class DataserviceService {
   //}
 
   public getPersona(): Observable<Persona>{
-    return this.http.get<Persona>(`${this.apiServerUrl}/personas/145`)
+    return this.http.get<Persona>(`${this.apiServerUrl}/personas/13`)
   }
 
 

@@ -18,7 +18,7 @@ sobreMiTextAreaContenido?:string;
     this.sobreMiHeader = 'Sobre Mi';
     this.parrafoSobreMiDisplayStatus= 'initial';
     this.sobreMiTextAreaDisplayStatus = 'none';
-    this.sobreMiTextAreaContenido = this.banner?.descripcionPersonal;
+
   }
 
   editAboutMeParagraph(){
@@ -36,6 +36,7 @@ sobreMiTextAreaContenido?:string;
     this.parrafoSobreMiDisplayStatus = 'initial';
   }
   mostratTextArea(){
+    this.sobreMiTextAreaContenido = this.banner?.descripcionPersonal;
     this.sobreMiTextAreaDisplayStatus = 'block';
     this.parrafoSobreMiDisplayStatus = "none";
   }
