@@ -20,7 +20,7 @@
     width: 100%;
 }
 
-.experiencia-logo>img{
+.t-content-item-logo img{
     object-fit: contain;
     max-width: 20rem;
     max-height: 10rem;

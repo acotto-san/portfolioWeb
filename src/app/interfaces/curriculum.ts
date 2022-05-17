@@ -16,3 +16,8 @@ export interface Curriculum{
     redes:RedSocial[];
 
 }
+
+export function isCurriculum(object:unknown): object is Curriculum{
+    return Object.prototype.hasOwnProperty.call(object, "banner")
+            && Object.prototype.hasOwnProperty.call(object, "experiencias")
+}

@@ -1,25 +1,65 @@
 <div class="container t-container">
-    <div class="row t-header">
-        <h2>Mis experiencias laborales</h2>
+    <div class="t-header row">
+            <h2 class="col-sm t-title">Mis experiencias laborales</h2>
+            <button class="col-1" mat-button>
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button class="col-1"  mat-button (click)="crearExperienciaLaboral()">
+                <mat-icon>add</mat-icon>
+            </button>
     </div>
-    <ul class="row t-content">
+
+    
+    <ul class="t-content">
 
 
         <li *ngFor="let experiencia of experiencias" class="row t-content-item">
+
             <div class="col-3 t-content-item-logo">
-                <img [src]='experiencia.logoImg.fuente' alt="logo de empresa">
-            </div>
-            <div class="col-9 t-experiencia-empresa">
-                <div class="row t-experiencia-empresa-header">
-                    <h2>{{experiencia.nombreEmpresa}}</h2>
-                    <p>{{experiencia.ubicacion}}</p>
-                    <h6>{{experiencia.mesComienzo}}/{{experiencia.anioComienzo}} - {{experiencia.mesFin}}/{{experiencia.anioFin}}</h6>
-                </div>a
-                <div *ngFor="let puesto of experiencia.puestos" class="row t-experiencia-puesto">
-                    <h4>{{puesto.nombre}}</h4>
-                    <h6 >{{puesto.mesComienzo}}/{{puesto.anioComienzo}} - {{puesto.mesFin}}/{{puesto.anioFin}}</h6>
-                    <p>{{puesto.descripcion}}</p>
+                <div *ngIf="experiencia.logoImg"> 
+                    <!-- si la expLaboral tiene  imagen -->
+                    <img [src]="experiencia.logoImg.fuente" alt="Logo de empresa">
                 </div>
+                <div *ngIf="!experiencia.logoImg"> 
+                    <!-- si no tiene imagen -->
+                    <img [src]="fotoThumbnail" style="max-width: 20rem; max-height:10rem; object-fit: contain;" alt="Logo de empresa generico">
+                </div>
+            </div>
+
+            <div class="col-9 t-experiencia-empresa">
+
+                <div class="row t-experiencia-empresa-header">
+                    <div class="col-sm">
+                        <h2>{{experiencia.nombreEmpresa}}</h2>
+                    </div>
+                    <button mat-button (click)="editarExperienciaLaboral(experiencia)" class="col-1 modify-items">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <p>{{experiencia.ubicacion}}</p>
+                </div>
+
+                <div *ngFor="let puesto of experiencia.puestos" class="row t-experiencia-puesto">
+                    
+                    <div class="puesto-header container">
+                        <div class="row">
+                            <h4 class="col-sm">{{puesto.nombre}}</h4>
+                            <button mat-button class="col-1 modify-items">
+                                <mat-icon>edit</mat-icon>
+                            </button>
+                        </div>
+                        <div class="row">
+                            <h6>{{puesto.fechaInicio | date}} - {{puesto.fechaFin | date}}</h6>
+                            <p>{{puesto.descripcion}}</p>
+                        </div>
+                    </div>                    
+                </div>
+
+                <div class="row">
+                    <button mat-stroked-button class="col-sm modify-items">
+                        <mat-icon>add</mat-icon><span>Nueva posicion</span>
+                    </button>
+                </div>
+
             </div>
         </li>
     </ul>

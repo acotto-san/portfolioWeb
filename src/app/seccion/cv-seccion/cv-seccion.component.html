@@ -1,7 +1,6 @@
-<div class="main-container">
-  <!-- <app-t-acerca-de class="tarjeta"[banner]="curriculum?.banner"></app-t-acerca-de> -->
+<div class="main-contenedor">
     <app-t-banner class="tarjeta" [banner]="curriculum?.banner"></app-t-banner>
-    <app-t-experiencia class="tarjeta" [experiencias]="curriculum?.experiencias"></app-t-experiencia>
+    <app-t-experiencia class="tarjeta" [curriculum]="curriculum" [experiencias]="curriculum?.experiencias"></app-t-experiencia>
     <app-t-educacion class="tarjeta"[estudios]="curriculum?.estudios"></app-t-educacion>
     <app-t-skills class="tarjeta"[skills]="curriculum?.skills"></app-t-skills>
     <app-t-proyectos class="tarjeta"[proyectos]="curriculum?.proyectos"></app-t-proyectos>

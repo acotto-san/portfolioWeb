@@ -4,10 +4,8 @@ export interface ExperienciaEducativa{
     id: number;
     institucion: string;
     titulo: string;
-    mesComienzo: number;
-    anioComienzo: number;
-    mesFin: number;
-    anioFin: number;
+    fechaInicio: string;
+    fechaFin: string;
     credencial: string;
     linkValidacion: string;
     credencialImg: Imagen;

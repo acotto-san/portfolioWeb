@@ -6,9 +6,5 @@ export interface ExperienciaLaboral{
     nombreEmpresa: string;
     ubicacion: string;
     logoImg: Imagen;
-    mesComienzo: number;
-    anioComienzo: number;
-    mesFin: number;
-    anioFin: number;
     puestos: ExperienciaPuesto[]
 }

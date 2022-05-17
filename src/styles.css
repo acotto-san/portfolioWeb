@@ -1,14 +1,14 @@
 html {
     font-size: 62.5%;
-    width: 100vw;
 }
 
 * {
     margin: 0px;
     padding: 0px;
 }
-body{
+.custom-body{
     width: 100%;
     background-color: rgb(240, 240, 240) !important;
 
 }
+

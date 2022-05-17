@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Persona } from './interfaces/persona';
-import { DataserviceService } from './persona.service';
+import { PersonaService } from './servicios/persona.service';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +13,7 @@ export class AppComponent {
 
   public persona?: Persona;
 
-  constructor(private personaService:DataserviceService) { }
+  constructor(private personaService:PersonaService) { }
 
   ngOnInit(){
     this.getPersona();

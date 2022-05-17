@@ -2,7 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { Curriculum } from 'src/app/interfaces/curriculum';
 import { Persona } from 'src/app/interfaces/persona';
-import { DataserviceService } from '../../persona.service';
+import { PersonaService } from '../../servicios/persona.service';
 
 @Component({
   selector: 'app-cv-seccion',
@@ -11,6 +11,7 @@ import { DataserviceService } from '../../persona.service';
 })
 export class CvSeccionComponent implements OnInit {
   @Input() curriculum?:Curriculum;
+  public asd:string = "aaa";
 
   constructor() { }
 

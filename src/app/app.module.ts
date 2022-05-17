@@ -1,16 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { ExperienciaComponent } from './components/experiencia/experiencia.component';
-import { EducacionComponent } from './components/educacion/educacion.component';
 import { LoginComponent } from './components/login/login.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { AsideComponent } from './components/aside/aside.component';
 import { LogoApComponent } from './components/logo-ap/logo-ap.component';
 import { SocialComponent } from './components/social/social.component';
 import { ProgressCircleComponent } from './seccion/tarjetas/t-skills/progress-circle/progress-circle.component';
@@ -21,16 +18,22 @@ import { TProyectosComponent } from './seccion/tarjetas/t-proyectos/t-proyectos.
 import { CvSeccionComponent } from './seccion/cv-seccion/cv-seccion.component';
 import { TarjetaComponent } from './seccion/tarjetas/tarjeta/tarjeta.component';
 import { TBannerComponent } from './seccion/tarjetas/t-banner/t-banner.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
+import { TExperienciaModalFormComponent } from './seccion/tarjetas/t-experiencia/t-experiencia-modal-form/t-experiencia-modal-form.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ExperienciaComponent,
-    EducacionComponent,
     LoginComponent,
     FooterComponent,
-    AsideComponent,
     LogoApComponent,
     SocialComponent,
     ProgressCircleComponent,
@@ -41,12 +44,23 @@ import { TBannerComponent } from './seccion/tarjetas/t-banner/t-banner.component
     CvSeccionComponent,
     TarjetaComponent,
     TBannerComponent,
+    TExperienciaModalFormComponent,
   ],
   imports: [
     HttpClientModule,
     FormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

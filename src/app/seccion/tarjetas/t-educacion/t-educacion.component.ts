@@ -8,10 +8,22 @@ import { ExperienciaEducativa } from 'src/app/interfaces/experienciaEducativa';
 })
 export class TEducacionComponent implements OnInit {
 @Input() estudios?:ExperienciaEducativa[];
+onEditEducacion?:ExperienciaEducativa;
+onEditModal:boolean = false;
+
 show:boolean = false;
+
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  comenzarEdicionDeEducacion(educacion:ExperienciaEducativa) {
+    this.onEditEducacion = educacion;
+    this.onEditModal = !this.onEditModal;
+    console.log(this.onEditEducacion);
+  }
+
 
 }

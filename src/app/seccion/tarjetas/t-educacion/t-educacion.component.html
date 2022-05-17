@@ -18,9 +18,9 @@
 
             <div class="col-9 t-estudio">
                 <h4>{{estudio.titulo}}</h4>
-                <button class="edit-estudio" *ngIf="show">cambiar</button>
+                <button (click)="comenzarEdicionDeEducacion(estudio)" class="edit-estudio btn btn-warning" *ngIf="show">cambiar</button>
                 <p>{{estudio.institucion}}</p>
-                <h6>{{estudio.mesComienzo}}/{{estudio.anioComienzo}} - {{estudio.mesFin}}/{{estudio.anioFin}}</h6>
+                <h6>{{estudio.fechaInicio}} - {{estudio.fechaFin}}</h6>
                 <p>{{estudio.credencial}}</p>
                 <p>{{estudio.linkValidacion}}</p>
             </div>
@@ -28,5 +28,6 @@
         </li>
 
     </ul>
+
 
 </div>
