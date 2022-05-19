@@ -1,7 +1,4 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { Persona } from './interfaces/persona';
-import { PersonaService } from './servicios/persona.service';
 
 @Component({
   selector: 'app-root',
@@ -9,24 +6,5 @@ import { PersonaService } from './servicios/persona.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'porfolioWeb';
-
-  public persona?: Persona;
-
-  constructor(private personaService:PersonaService) { }
-
-  ngOnInit(){
-    this.getPersona();
-  }
-
-  public getPersona(): void{
-    this.personaService.getPersona().subscribe(
-      (response: Persona) => {
-        this.persona = response;
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    )
-  }
+  title = 'cvArgenProg';
 }

@@ -1,0 +1,15 @@
+<div *ngIf="data">
+  <h1 mat-dialog-title>Hi {{personaEnModa.nombre}}</h1>
+  <div mat-dialog-content>
+    <p>What's your favorite animal?</p>
+    <mat-form-field appearance="fill">
+      <mat-label>Cambiamos tu nombre?</mat-label>
+      <input matInput [(ngModel)]="personaEnModa.nombre">
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="close()"></button>
+    <button mat-button (click)="edit()" cdkFocusInitial>Ok</button>
+  </div>
+    
+</div>

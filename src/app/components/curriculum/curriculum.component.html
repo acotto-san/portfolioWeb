@@ -1,0 +1,162 @@
+<div class="container">
+
+    <div *ngIf="persona.curriculum.banner" class="row">
+        <mat-card class="example-card col-sm-12">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Shiba Inu</mat-card-title>
+              <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+            </mat-card-header>
+            <div class="mat-card-image-banner">
+                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+            </div>
+            <mat-card-content>
+                <div >
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4">
+                            <div class="row avatar-row">
+                                <img  [src]="persona.curriculum.banner.avatarImg.fuente" alt="">
+                            </div>
+                            <div class="row">
+                                <h2>{{persona.curriculum.banner.nombrePersona}}</h2>
+                                <p>{{persona.curriculum.banner.puestoActual}}</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-8">
+                            <p>{{persona.curriculum.banner.descripcionPersonal}}</p>
+                        </div>
+                    </div>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button>EDIT</button>
+            </mat-card-actions>
+          </mat-card>
+    </div>
+
+    <div *ngIf="persona.curriculum.experiencias" class="row">
+        <mat-card class="col-sm-12">
+            <mat-card-title>
+                Experiencias Laborales
+            </mat-card-title>
+            <mat-card-content>
+                <div class="container">
+                    <ul>
+                        <li *ngFor="let experiencia of persona.curriculum.experiencias" class="row">
+
+                            <div style="max-height: 7rem; overflow: hidden;" class="row">
+
+                                <div style="overflow:hidden;" class="col-sm-2 col-md-4">
+                                    <img style="width: 100%;" [src]="experiencia.logoImg.fuente" alt="Logo  empresa">
+                                </div>
+
+                                <div class="col-sm-10 col-md-8">
+                                    <div class="row">
+                                        <h2 class="col"><b>{{experiencia.nombreEmpresa}}</b></h2>
+                                        <button mat-button class="col-1">
+                                            <mat-icon>edit</mat-icon>
+                                        </button>
+                                        <button mat-button (click)="openPuestoDialog('crear',experiencia)"  class="col-1">
+                                            <mat-icon>add</mat-icon>
+                                        </button>
+                                    </div>
+                                    <span>{{experiencia.tipoJornada}}</span>
+                                    <p>{{experiencia.ubicacion}}</p>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-sm col-md-4"></div>
+                                <ul class="col-sm-12 col-md-8">
+                                    <li *ngFor="let puesto of experiencia.puestos" >
+                                     <div class="row">
+                                        <p class="col"><b>{{puesto.nombre}}</b></p>
+                                        <button mat-button class="col-1" (click)="openPuestoDialog('editar',puesto)">
+                                            <mat-icon>edit</mat-icon>
+                                        </button>
+                                     </div>
+                                     <p>{{puesto.fechaInicio | date: 'MMM-YYYY' }} / {{puesto.fechaFin | date: 'MMM-YYYY'}}</p>
+                                     <p>{{puesto.descripcion}}</p>
+                                    </li> 
+                                 </ul>
+                                 
+                            </div>
+
+                        </li>
+                    </ul>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button>
+                    <mat-icon>
+                        remove
+                    </mat-icon>
+                </button>
+              </mat-card-actions>
+        </mat-card>
+    </div>
+    
+    <div *ngIf="persona.curriculum.estudios" class="row">
+        <mat-card class="col-sm-12">
+            <mat-card-title>
+                Estudios
+            </mat-card-title>
+            <mat-card-content>
+                <div class="container">
+                    
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button>
+                    <mat-icon>
+                        edit
+                    </mat-icon>
+                </button>
+              </mat-card-actions>
+        </mat-card>
+    </div>
+
+    <div *ngIf="persona.curriculum.skills" class="row">
+    <mat-card class="col-sm-12">
+        <mat-card-title >
+            Skills
+        </mat-card-title>
+        <mat-card-content>
+            <div class="container">
+                
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button>EDIT</button>
+          </mat-card-actions>
+    </mat-card>
+    </div>
+
+    <div *ngIf="persona.curriculum.proyectos" class="row">
+        <mat-card  class="col-sm-12">
+            <mat-card-title>
+                Proyectos
+            </mat-card-title>
+            <mat-card-content>
+                <div class="container">
+                    
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button>EDIT</button>
+              </mat-card-actions>
+        </mat-card>
+    </div>
+
+
+
+
+</div>
+
+<!-- 
+
+
+
+ -->

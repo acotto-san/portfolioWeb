@@ -1,14 +1,13 @@
-html {
-    font-size: 62.5%;
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+html, body { height: 100vh; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body{
+    background-color: rgba(195, 195, 195, 0.381);
+    
 }
 
-* {
-    margin: 0px;
-    padding: 0px;
+li{
+    list-style:none;
 }
-.custom-body{
-    width: 100%;
-    background-color: rgb(240, 240, 240) !important;
-
-}
-
