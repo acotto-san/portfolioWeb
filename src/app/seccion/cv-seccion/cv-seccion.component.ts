@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
-import { Curriculum } from 'src/app/interfaces/curriculum';
+import { ICurriculum } from 'src/app/interfaces/curriculum';
 import { Persona } from 'src/app/interfaces/persona';
 import { PersonaService } from '../../servicios/persona.service';
 
@@ -10,7 +10,7 @@ import { PersonaService } from '../../servicios/persona.service';
   styleUrls: ['./cv-seccion.component.css']
 })
 export class CvSeccionComponent implements OnInit {
-  @Input() curriculum?:Curriculum;
+  @Input() curriculum?:ICurriculum;
   public asd:string = "aaa";
 
   constructor() { }

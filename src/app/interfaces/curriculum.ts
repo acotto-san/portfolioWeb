@@ -1,23 +1,23 @@
-import { Banner } from "./banner";
-import { ExperienciaEducativa } from "./experienciaEducativa";
-import { ExperienciaLaboral } from "./experienciaLaboral";
-import { Proyecto } from "./proyecto";
-import { RedSocial } from "./redSocial";
-import { Skill } from "./skill";
+import { IBanner } from "./banner";
+import { IExperienciaEducativa } from "./experienciaEducativa";
+import { IExperienciaLaboral } from "./experienciaLaboral";
+import { IProyecto } from "./proyecto";
+import { IRedSocial } from "./redSocial";
+import { ISkill } from "./skill";
 
-export interface Curriculum{
+export interface ICurriculum{
     id:number;
     firstInit:boolean;
-    banner:Banner;
-    experiencias:ExperienciaLaboral[];
-    estudios:ExperienciaEducativa[];
-    skills:Skill[];
-    proyectos:Proyecto[];
-    redes:RedSocial[];
+    banner:IBanner;
+    experiencias:IExperienciaLaboral[];
+    estudios:IExperienciaEducativa[];
+    skills:ISkill[];
+    proyectos:IProyecto[];
+    redes:IRedSocial[];
 
 }
 
-export function isCurriculum(object:unknown): object is Curriculum{
+export function isCurriculum(object:unknown): object is ICurriculum{
     return Object.prototype.hasOwnProperty.call(object, "banner")
             && Object.prototype.hasOwnProperty.call(object, "experiencias")
 }

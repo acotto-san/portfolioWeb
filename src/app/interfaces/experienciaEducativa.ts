@@ -1,6 +1,6 @@
-import { Imagen } from "./imagen";
+import { IImagen } from "./imagen";
 
-export interface ExperienciaEducativa{
+export interface IExperienciaEducativa{
     id: number;
     institucion: string;
     titulo: string;
@@ -8,5 +8,5 @@ export interface ExperienciaEducativa{
     fechaFin: string;
     credencial: string;
     linkValidacion: string;
-    credencialImg: Imagen;
+    credencialImg: IImagen;
 }

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Banner } from 'src/app/interfaces/banner';
+import { IBanner } from 'src/app/interfaces/banner';
 
 @Component({
   selector: 'app-t-banner',
@@ -7,7 +7,7 @@ import { Banner } from 'src/app/interfaces/banner';
   styleUrls: ['./t-banner.component.css']
 })
 export class TBannerComponent implements OnInit {
-@Input() banner?:Banner;
+@Input() banner?:IBanner;
 sobreMiHeader? : string ;
 parrafoSobreMiDisplayStatus? : string;
 sobreMiTextAreaDisplayStatus?:string;

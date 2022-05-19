@@ -1,4 +1,4 @@
-export interface Imagen{
+export interface IImagen{
     id: number;
     fuente: String;
 }

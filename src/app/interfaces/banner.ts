@@ -1,10 +1,10 @@
-import { Imagen } from "./imagen";
+import { IImagen } from "./imagen";
 
-export interface Banner{
+export interface IBanner{
     id: number;
     nombrePersona:string;
     puestoActual:string;
     descripcionPersonal:string;
-    avatarImg:Imagen;
-    bannerImg:Imagen;
+    avatarImg:IImagen;
+    bannerImg:IImagen;
 }

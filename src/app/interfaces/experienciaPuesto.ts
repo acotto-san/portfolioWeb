@@ -1,4 +1,4 @@
-export interface ExperienciaPuesto{
+export interface IExperienciaPuesto{
     id: number;
     nombre: string;
     descripcion: string;

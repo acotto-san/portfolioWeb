@@ -27,6 +27,9 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { TExperienciaModalFormComponent } from './seccion/tarjetas/t-experiencia/t-experiencia-modal-form/t-experiencia-modal-form.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { CreateDialogComponent } from './seccion/tarjetas/t-experiencia/create-dialog/create-dialog.component';
+import { EditExperienceDialogComponent } from './seccion/tarjetas/t-experiencia/edit-experience-dialog/edit-experience-dialog.component';
+import { EditDialogComponent } from './seccion/tarjetas/t-experiencia/edit-dialog/edit-dialog.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +48,9 @@ import {MatInputModule} from '@angular/material/input';
     TarjetaComponent,
     TBannerComponent,
     TExperienciaModalFormComponent,
+    CreateDialogComponent,
+    EditExperienceDialogComponent,
+    EditDialogComponent,
   ],
   imports: [
     HttpClientModule,

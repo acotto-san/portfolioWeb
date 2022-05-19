@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Skill } from 'src/app/interfaces/skill';
+import { ISkill } from 'src/app/interfaces/skill';
 
 @Component({
   selector: 'app-t-skills',
@@ -7,7 +7,7 @@ import { Skill } from 'src/app/interfaces/skill';
   styleUrls: ['./t-skills.component.css','../../cv-seccion/cv-seccion.component.css']
 })
 export class TSkillsComponent implements OnInit {
-@Input() skills?:Skill[];
+@Input() skills?:ISkill[];
   constructor() { }
 
   ngOnInit(): void {

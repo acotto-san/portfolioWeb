@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Imagen } from 'src/app/interfaces/imagen';
+import { IImagen } from 'src/app/interfaces/imagen';
 
 @Component({
   selector: 'app-banner',
@@ -7,7 +7,7 @@ import { Imagen } from 'src/app/interfaces/imagen';
   styleUrls: ['./banner.component.css']
 })
 export class BannerComponent implements OnInit {
-@Input() bannerImg?:Imagen;
+@Input() bannerImg?:IImagen;
 
   constructor() { }
 

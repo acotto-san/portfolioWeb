@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Banner } from 'src/app/interfaces/banner';
+import { IBanner } from 'src/app/interfaces/banner';
 
 @Component({
   selector: 'app-datos-personales',
@@ -9,7 +9,7 @@ import { Banner } from 'src/app/interfaces/banner';
 
 
 export class DatosPersonalesComponent implements OnInit {
-  @Input() banner?:Banner;
+  @Input() banner?:IBanner;
 
   sobreMiHeader? : string ;
   parrafoSobreMiDisplayStatus? : string ;

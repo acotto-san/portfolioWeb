@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Curriculum } from '../interfaces/curriculum';
+import { ICurriculum } from '../interfaces/curriculum';
 import { environment } from 'src/environments/environment';
-import { ExperienciaLaboral } from '../interfaces/experienciaLaboral';
+import { IExperienciaLaboral } from '../interfaces/experienciaLaboral';
 
 @Injectable({
   providedIn: 'root'
@@ -12,12 +12,16 @@ export class CurriculumService {
   private apiServerUrl = environment.apiBaseUrl;
   constructor(private http:HttpClient) { }
 
-  public getCurriculums(): Observable<Curriculum>{
-    return this.http.get<Curriculum>(`${this.apiServerUrl}/curriculums/all`)
+  public getCurriculums(): Observable<ICurriculum[]>{
+    return this.http.get<ICurriculum[]>(`${this.apiServerUrl}/curriculums/all`)
   }
 
-  public updateCurriculum(curriculum:Curriculum): Observable<Curriculum>{
-    return this.http.put<Curriculum>(`${this.apiServerUrl}/curriculums/update`,curriculum)
+  public getCurriculumById(id:number): Observable<ICurriculum>{
+    return this.http.get<ICurriculum>(`${this.apiServerUrl}/curriculums/${id}`)
+  }
+
+  public updateCurriculum(curriculum:ICurriculum): Observable<ICurriculum>{
+    return this.http.put<ICurriculum>(`${this.apiServerUrl}/curriculums/update`,curriculum)
   }
 
 }

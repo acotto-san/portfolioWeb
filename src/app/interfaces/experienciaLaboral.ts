@@ -1,10 +1,10 @@
-import { ExperienciaPuesto } from "./experienciaPuesto";
-import { Imagen } from "./imagen";
+import { IExperienciaPuesto } from "./experienciaPuesto";
+import { IImagen } from "./imagen";
 
-export interface ExperienciaLaboral{
+export interface IExperienciaLaboral{
     id: number;
     nombreEmpresa: string;
     ubicacion: string;
-    logoImg: Imagen;
-    puestos: ExperienciaPuesto[]
+    logoImg: IImagen;
+    puestos: IExperienciaPuesto[]
 }

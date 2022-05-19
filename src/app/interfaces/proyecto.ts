@@ -1,9 +1,9 @@
-import { Imagen } from "./imagen";
+import { IImagen } from "./imagen";
 
-export interface Proyecto{
+export interface IProyecto{
     id: number;
     nombre: number;
     link: string;
     descripcion: string;
-    previewImg: Imagen;
+    previewImg: IImagen;
 }

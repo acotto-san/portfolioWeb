@@ -10,14 +10,12 @@
                 <mat-label>Ubicacion</mat-label>
                 <input matInput formControlName="ubicacion">
             </mat-form-field>
-            <mat-dialog-content *ngIf="false">
-                <p>prueba</p>
-            </mat-dialog-content>
         </div>
     </form>
 
     <div mat-dialog-action [align]="'end'">
+        <button mat-flat-button (click)="onDelete()">Eliminar</button>
         <button mat-raised-button color="warn">Cerrar</button>
-        <button mat-raised-button color="primary" (click)="crearOEditar()">{{botonDeAccion}}</button>
+        <button mat-raised-button color="primary" (click)="onEdit()">Editar</button>
     </div>
 
