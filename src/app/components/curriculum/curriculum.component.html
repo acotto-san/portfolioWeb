@@ -1,11 +1,9 @@
-<div class="container">
+<div  class="container">
 
     <div *ngIf="persona.curriculum.banner" class="row">
         <mat-card class="example-card col-sm-12">
             <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title>Shiba Inu</mat-card-title>
-              <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+
             </mat-card-header>
             <div class="mat-card-image-banner">
                 <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
@@ -45,19 +43,26 @@
                         <li *ngFor="let experiencia of persona.curriculum.experiencias" class="row">
 
                             <div style="max-height: 7rem; overflow: hidden;" class="row">
+                                
+                                    
+                                <div *ngIf="experiencia.logoImg.fuente;then content else other_content"></div>
+                                    <ng-template #content>
+                                        <div style="overflow:hidden;" class="col-sm-2 col-md-4">
+                                            <img style="width: 100%;" [src]="experiencia.logoImg.fuente" alt="Logo  empresa">
+                                        </div>
+                                    </ng-template>
 
-                                <div style="overflow:hidden;" class="col-sm-2 col-md-4">
-                                    <img style="width: 100%;" [src]="experiencia.logoImg.fuente" alt="Logo  empresa">
-                                </div>
+                                    <ng-template #other_content> 
+                                        <div style="overflow:hidden;" class="col-sm-2 col-md-4">
+                                            <img style="width: 100%;" src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png" alt="Logo  empresa">
+                                        </div>
+                                    </ng-template>
 
                                 <div class="col-sm-10 col-md-8">
                                     <div class="row">
-                                        <h2 class="col"><b>{{experiencia.nombreEmpresa}}</b></h2>
-                                        <button mat-button class="col-1">
-                                            <mat-icon>edit</mat-icon>
-                                        </button>
-                                        <button mat-button (click)="openPuestoDialog('crear',experiencia)"  class="col-1">
-                                            <mat-icon>add</mat-icon>
+                                        <h2 class="col-9"><b>{{experiencia.nombreEmpresa}}</b></h2>
+                                        <button mat-button class="col" (click)="openExperienciaDialog({intencion:'editar',payload:experiencia})">
+                                            <mat-icon>edit</mat-icon><span>Editar empresa</span>
                                         </button>
                                     </div>
                                     <span>{{experiencia.tipoJornada}}</span>
@@ -72,27 +77,30 @@
                                 <ul class="col-sm-12 col-md-8">
                                     <li *ngFor="let puesto of experiencia.puestos" >
                                      <div class="row">
-                                        <p class="col"><b>{{puesto.nombre}}</b></p>
-                                        <button mat-button class="col-1" (click)="openPuestoDialog('editar',puesto)">
-                                            <mat-icon>edit</mat-icon>
+                                        <p class="col-9"><b>{{puesto.nombre}}</b></p>
+                                        <button mat-button class="col" (click)="openPuestoDialog({intencion:'editar',payload:puesto})">
+                                            <mat-icon>edit</mat-icon><span>Editar puesto</span>
                                         </button>
                                      </div>
                                      <p>{{puesto.fechaInicio | date: 'MMM-YYYY' }} / {{puesto.fechaFin | date: 'MMM-YYYY'}}</p>
                                      <p>{{puesto.descripcion}}</p>
                                     </li> 
+                                    <button mat-button (click)="openPuestoDialog({intencion:'crear',payload:experiencia})"  class="col-12">
+                                        <mat-icon>add</mat-icon><span>Nuevo puesto</span>
+                                    </button>
                                  </ul>
-                                 
                             </div>
+                            <div class="row">
 
+                            </div>
                         </li>
                     </ul>
                 </div>
             </mat-card-content>
             <mat-card-actions>
-                <button mat-button>
-                    <mat-icon>
-                        remove
-                    </mat-icon>
+                <button mat-button><mat-icon>remove</mat-icon></button>
+                <button mat-button (click)="openExperienciaDialog({intencion:'crear',payload:persona.curriculum})">
+                    <mat-icon>add</mat-icon><span>Nueva empresa</span>
                 </button>
               </mat-card-actions>
         </mat-card>

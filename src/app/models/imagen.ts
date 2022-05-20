@@ -1,6 +1,6 @@
 export class Imagen {
     id!: number|null;
-    fuente!: string;
+    fuente!: string|null;
 
     constructor(obj:Partial<Imagen>){
         Object.assign(this,obj)

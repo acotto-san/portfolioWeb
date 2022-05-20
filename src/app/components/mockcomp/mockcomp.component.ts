@@ -30,8 +30,8 @@ export class MockcompComponent implements OnInit {
       this.cargaDePersona();
     });
   }
-  cargaDePersona(){
-    this.personaServ.getPersona().subscribe({
+  cargaDePersona(idPersona:number=1){
+    this.personaServ.getPersona(idPersona).subscribe({
       next:(response)=>{
         this.persona = new Persona(response)
         console.log(JSON.stringify(response))

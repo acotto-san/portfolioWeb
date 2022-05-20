@@ -1,0 +1,40 @@
+
+<h1 mat-dialog-title>{{titleDialog}}</h1>
+<form [formGroup]="dialogForm">
+    <div mat-dialog-content>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Nombre de la empresa</mat-label>
+            <input matInput formControlName="nombreEmpresa">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Tipo de jornada</mat-label>
+            <mat-select formControlName="tipoJornada" required [(value)]="tempExp.tipoJornada"> 
+                <mat-option>--</mat-option>
+                    <mat-option *ngFor="let jornada of jornadas" [value]="jornada.tipo">
+                    {{jornada.tipo}}
+                    </mat-option>
+                </mat-select>
+            <mat-error *ngIf="dialogForm.hasError('required')">Seleccione tipo de jornada</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Ubicacion</mat-label>
+            <input matInput formControlName="ubicacion">
+        </mat-form-field>
+
+       
+      </div>
+</form>
+
+
+
+<div mat-dialog-actions align="end">
+  <div *ngIf="data.intencion!=='crear'">
+    <button  mat-button (click)="cerrarDialog('eliminar')"> Eliminar</button>
+  </div>
+  <button mat-button (click)="cerrarDialog('cerrar')">Cerrar</button>
+  <button mat-button cdkFocusInitial (click)="cerrarDialog('confirmar')">{{actionBtn}}</button>
+</div>
+

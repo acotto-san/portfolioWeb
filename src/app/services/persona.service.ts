@@ -13,7 +13,7 @@ export class PersonaService {
 
   private apiServerUrl = environment.apiBaseUrl;
 
-  public getPersona(): Observable<Persona>{
-    return this.http.get<Persona>(`${this.apiServerUrl}/personas/1`)
+  public getPersona(id:number): Observable<Persona>{
+    return this.http.get<Persona>(`${this.apiServerUrl}/personas/${id}`)
   }
 }

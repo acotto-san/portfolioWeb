@@ -40,15 +40,13 @@ export class PuestoDialogComponent implements OnInit {
       this.setearParaCrear()
     }
   }
-
   setearParaEditar(){
     this.tempPuesto = new ExperienciaPuesto(this.data.payload);
     this.actionBtn = "Editar";
-    this.titleDialog= "Edicion de puesto laboral"
+    this.titleDialog= "Editar datos del puesto"
     this.cargarFormConInjectData();
 
   }
-
   cargarFormConInjectData(){
     this.dialogForm.controls["nombre"].setValue(this.tempPuesto.nombre);
     this.dialogForm.controls["fechaInicio"].setValue(this.tempPuesto.fechaInicio);
@@ -59,11 +57,9 @@ export class PuestoDialogComponent implements OnInit {
   setearParaCrear(){
     this.tempExp = new ExperienciaLaboral(this.data.payload);
     this.actionBtn="Crear";
-    this.titleDialog = "Creacion de puesto laboral"
+    this.titleDialog = "Agregar un nuevo puesto"
   }
-
-
-  cerrarDialog(intencionDeCierre:string){
+  cerrarDialog(intencionDeCierre:'cerrar'|'eliminar'|'confirmar'|'crear'){
     
     switch(intencionDeCierre){
       case 'confirmar':
@@ -84,7 +80,6 @@ export class PuestoDialogComponent implements OnInit {
         break;
     }
   }
-
   modalResponseCrearPuesto(){
     if(this.dialogForm.valid){
       this.volcarDataDelForm();
@@ -100,7 +95,6 @@ export class PuestoDialogComponent implements OnInit {
       this.dialogRef.close({intencion:this.data.intencion,payload:this.tempPuesto})
     }
   }
-
   modalResponceCerradoSinAccion(){
     this.dialogForm.reset();
     this.dialogRef.close({intencion:'cerrar'})
@@ -109,7 +103,6 @@ export class PuestoDialogComponent implements OnInit {
     this.dialogForm.reset();
     this.dialogRef.close({intencion:"eliminar",payload:this.data.payload.id})
   }
-
   volcarDataDelForm(){
     this.tempPuesto.nombre = this.dialogForm.value.nombre
     this.tempPuesto.fechaInicio = this.dialogForm.value.fechaInicio

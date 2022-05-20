@@ -5,3 +5,7 @@ mat-card{
     overflow: hidden;
 }
 
+button[mat-button]{
+    border: 1px solid rgba(128, 128, 128, 0.315); 
+    box-shadow: 2px 2px 3px rgb(214, 214, 214);
+}

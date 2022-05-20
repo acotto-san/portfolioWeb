@@ -2,6 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { Mock2Component } from './components/mock2/mock2.component';
 import { CurriculumComponent } from './components/curriculum/curriculum.component';
 import { PuestoDialogComponent } from './components/dialogs/puesto-dialog/puesto-dialog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
@@ -21,6 +23,9 @@ import {MatIconModule} from '@angular/material/icon';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatSelectModule} from '@angular/material/select';
+
+import { ExperienciaDialogComponent } from './components/dialogs/experiencia-dialog/experiencia-dialog.component';
 
 @NgModule({
   declarations: [
@@ -28,11 +33,13 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MockcompComponent,
     Mock2Component,
     CurriculumComponent,
-    PuestoDialogComponent
+    PuestoDialogComponent,
+    ExperienciaDialogComponent
   ],
   imports: [
     FormsModule,
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -47,7 +54,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatSliderModule,
     MatToolbarModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
