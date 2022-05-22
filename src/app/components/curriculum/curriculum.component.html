@@ -1,15 +1,15 @@
 <div  class="container">
 
     <!-- ------------------Nueva seccion------------------------ -->
-    <div *ngIf="persona.curriculum.banner" class="row">
-        <mat-card class="example-card col-sm-12">
+    <div *ngIf="persona.curriculum.banner" class="row d-flex justify-content-center">
+        <mat-card class="example-card col-sm-12 col-md-8">
             <mat-card-header>
 
             </mat-card-header>
             <div class="mat-card-image-banner">
                 <img mat-card-image [src]="persona.curriculum.banner.bannerImg.fuente" alt="Banner del curriculum" style="max-height: 300px; object-fit:cover;">
             </div>
-            <mat-card-content>
+            <mat-card-content style="box-sizing: border-box;">
                 <div >
                     <div class="row">
                         <div class="col-sm-12 col-md-4">
@@ -37,35 +37,113 @@
 
 
     <!-- -Nueva seccion------------------------------------ -->
-    <div *ngIf="persona.curriculum.experiencias" class="row">
-        <mat-card class="col-sm-12">
+    <!-- <div *ngIf="persona.curriculum.experiencias" class="row d-flex justify-content-center">
+        <div class="col-sm-12 col-md-8">
+            <h1>
+                Experiencias Laborales
+            </h1>
+            <div style="background-color: white;" >
+                <ul class="container">
+                    <li *ngFor="let experiencia of persona.curriculum.experiencias" class="row" style="box-sizing: border-box;">
+
+                        <div style="max-height: 7rem;" class="row d-flex justify-content-end ">
+                            
+                                
+                            <div  *ngIf="experiencia.logoImg.fuente;then content else other_content"></div>
+                                <ng-template  #content>
+                                    <div style="height:100%; display:flex; justify-items: flex-end;" class="col-sm-2 col-md-2 d-flex justify-content-end">
+                                        <img style="height: 100%; align-self: flex-end;  object-fit:scale-down;" [src]="experiencia.logoImg.fuente" alt="Logo de empresa">
+                                    </div>
+                                </ng-template>
+
+                                <ng-template #other_content> 
+                                    <div style="overflow:hidden;" class="col-sm-2 col-md-4">
+                                        <img style="height: 100%;max-height: 50px; object-fit:scale-down;" src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png" alt="Logo  empresa">
+                                    </div>
+                                </ng-template>
+
+                            <div class="col-sm-8 col-md-8">
+                                <div class="row">
+                                    <h2 class="col"><b>{{experiencia.nombreEmpresa}}</b></h2>
+                                    <button mat-mini-fab class="hover-class" color="primary" (click)="openPuestoDialog({intencion:'crear',payload:experiencia})" >
+                                        <mat-icon>add</mat-icon>
+                                    </button>
+                                    <button mat-mini-fab color="primary" (click)="openExperienciaDialog({intencion:'editar',payload:experiencia})">
+                                        <mat-icon>edit</mat-icon>
+                                    </button>
+                                </div>
+                                <span>{{experiencia.tipoJornada}}</span>
+                                <p>{{experiencia.ubicacion}}</p>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-sm col-md-4"></div>
+                            <ul class="col-sm-12 col-md-8">
+                                <li *ngFor="let puesto of experiencia.puestos" >
+                                 <div class="row">
+                                    <p class="col"><b>{{puesto.nombre}}</b></p>
+                                    <button mat-mini-fab color="primary" (click)="openPuestoDialog({intencion:'editar',payload:puesto})">
+                                        <mat-icon>edit</mat-icon>
+                                    </button>
+                                 </div>
+                                 <p>{{puesto.fechaInicio | date: 'MMM YYYY' }} / {{puesto.fechaFin | date: 'MMM YYYY'}}</p>
+                                 <p>{{puesto.descripcion}}</p>
+                                </li> 
+                             </ul>
+                        </div>
+                        <div class="row">
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <button mat-mini-fab color="primary" (click)="openExperienciaDialog({intencion:'crear',payload:persona.curriculum})">
+                    <mat-icon>add</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div> -->
+
+
+
+
+
+    <div *ngIf="persona.curriculum.experiencias" class="row d-flex justify-content-center">
+        <mat-card class="col-sm-12 col-md-8">
             <mat-card-title>
                 Experiencias Laborales
             </mat-card-title>
             <mat-card-content>
                 <div >
-                    <ul class="container">
-                        <li *ngFor="let experiencia of persona.curriculum.experiencias" class="row">
+                    <ul class="container" style="box-sizing: border-box;">
+                        <li *ngFor="let experiencia of persona.curriculum.experiencias"  >
 
-                            <div style="max-height: 7rem; overflow: hidden;" class="row">
+                            <div class="row d-flex justify-content-end falop1" >
                                 
                                     
                                 <div *ngIf="experiencia.logoImg.fuente;then content else other_content"></div>
+                                    
                                     <ng-template #content>
-                                        <div style="overflow:hidden;" class="col-sm-2 col-md-4">
-                                            <img style="width: 100%;" [src]="experiencia.logoImg.fuente" alt="Logo de empresa">
+                                        <div style="max-height: 7rem;" class="col-sm-2 col-md-2 falopa2">
+                                            <img style="height: 100%;  object-fit:scale-down;" [src]="experiencia.logoImg.fuente" alt="Logo de empresa">
                                         </div>
                                     </ng-template>
 
                                     <ng-template #other_content> 
-                                        <div style="overflow:hidden;" class="col-sm-2 col-md-4">
-                                            <img style="width: 100%;" src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png" alt="Logo  empresa">
-                                        </div>
+                                            <img style="height: 100%;max-height: 50px; object-fit:scale-down;" src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png" alt="Logo  empresa">
                                     </ng-template>
 
-                                <div class="col-sm-10 col-md-8">
-                                    <div class="row">
-                                        <h2 class="col"><b>{{experiencia.nombreEmpresa}}</b></h2>
+                                    <div class="col falopa3">
+                                        <h2 ><b>{{experiencia.nombreEmpresa}}</b></h2>
+                                        <span>{{experiencia.tipoJornada}}</span>
+                                        <p>{{experiencia.ubicacion}}</p>
+                                    </div>
+
+                                    <div class="col-sm-3">
                                         <button mat-mini-fab class="hover-class" color="primary" (click)="openPuestoDialog({intencion:'crear',payload:experiencia})" >
                                             <mat-icon>add</mat-icon>
                                         </button>
@@ -73,10 +151,7 @@
                                             <mat-icon>edit</mat-icon>
                                         </button>
                                     </div>
-                                    <span>{{experiencia.tipoJornada}}</span>
-                                    <p>{{experiencia.ubicacion}}</p>
-                                </div>
-
+                                    
                             </div>
 
                             <div class="row">
@@ -111,14 +186,14 @@
     </div>
     
     <!-- -----------------------Nueva Seccion------------------ -->
-    <div *ngIf="persona.curriculum.estudios" class="row">
-        <mat-card class="col-sm-12">
+    <div *ngIf="persona.curriculum.estudios" class="row d-flex justify-content-center">
+        <mat-card class="col-sm-12 col-md-8">
             <mat-card-title>
                 Estudios
             </mat-card-title>
             <mat-card-content>
                 <div class="container">
-                    <ul>
+                    <ul style="box-sizing: border-box;">
 
 
 
@@ -152,13 +227,13 @@
 
     <!-- -----------------------Nueva seccion--------------------------- -->
 
-    <div *ngIf="persona.curriculum.skills" class="row">
-    <mat-card class="col-sm-12">
+    <div *ngIf="persona.curriculum.skills" class="row d-flex justify-content-center">
+    <mat-card class="col-sm-12 col-md-8">
         <mat-card-title >
             Skills
         </mat-card-title>
         <mat-card-content>
-            <ul>
+            <ul style="box-sizing: border-box;">
                 <li *ngFor="let skill of persona.curriculum.skills" class="row">
                     <button mat-mini-fab (click)="crudSkillDialog({intencion:'editar',payload:skill})">
                         <mat-icon>edit</mat-icon>
@@ -180,13 +255,13 @@
 
 <!-- -------------------------------Nueva seccion------------------------------- -->
 
-    <div *ngIf="persona.curriculum.proyectos" class="row">
-        <mat-card  class="col-sm-12">
+    <div *ngIf="persona.curriculum.proyectos" class="row d-flex justify-content-center">
+        <mat-card  class="col-sm-12 col-md-8">
             <mat-card-title>
                 Proyectos
             </mat-card-title>
             <mat-card-content>
-                <ul>
+                <ul style="box-sizing: border-box;">
 
 
                     <li *ngFor="let proyecto of persona.curriculum.proyectos">
