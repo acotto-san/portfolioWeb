@@ -16,7 +16,7 @@ export class PuestoService {
     return this.http.put<ExperienciaPuesto>(`${this.apiServerUrl}/exp-puestos/update`,obj)
   }
 
-  public removePuesto(id:number): any{
+  public removePuesto(id:number): Observable<any>{
     return this.http.delete<any>(`${this.apiServerUrl}/exp-puestos/${id}`)
   }
 }

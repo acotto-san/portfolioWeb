@@ -5,7 +5,19 @@ mat-card{
     overflow: hidden;
 }
 
+.project-card{
+    background-color: rgba(233, 233, 233, 0.486);
+    max-width: 400px;
+}
+
 button[mat-button]{
     border: 1px solid rgba(128, 128, 128, 0.315); 
     box-shadow: 2px 2px 3px rgb(214, 214, 214);
 }
+
+button[mat-mini-fab]{
+    background-color: rgba(60, 0, 128, 0.733);
+}
+button[mat-mini-fab]:hover{
+    background-color: rgba(60, 0, 128, 0.87);
+  }

@@ -16,4 +16,8 @@ export class ExperienciaLaboralService {
     return this.http.put<ExperienciaLaboral>(`${this.apiServerUrl}/exp-laborales/update`,obj)
   }
 
+  public removeExperiencia(id:number):Observable<any>{
+    return this.http.delete<any>(`${this.apiServerUrl}/exp-laborales/${id}`)
+  }
+
 }

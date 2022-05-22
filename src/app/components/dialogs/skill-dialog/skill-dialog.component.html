@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>{{titleDialog}}</h1>
+<form [formGroup]="dialogForm">
+    <div mat-dialog-content>
+        <mat-form-field appearance="outline">
+            <mat-label>Tecnologia</mat-label>
+            <input matInput formControlName="tecnologia">
+        </mat-form-field>
+        <mat-form-field  appearance="outline">
+            <mat-label>Porcentaje de skill</mat-label>
+            <input type="number" matInput formControlName="porcentaje">
+        </mat-form-field>
+    </div>
+</form>
+
+<div mat-dialog-actions align="end">
+    <div *ngIf="inputDataDialog.intencion!=='crear'">
+        <button  mat-button (click)="cerrarDialog('eliminar')"> Eliminar</button>
+      </div>
+    <button mat-button (click)="cerrarDialog('cancelar')">Cancelar</button>
+    <button mat-button cdkFocusInitial (click)="cerrarDialog('confirmar')">{{actionBtn}}</button>
+</div>

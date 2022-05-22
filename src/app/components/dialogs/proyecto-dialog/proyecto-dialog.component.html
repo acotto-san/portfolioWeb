@@ -1,0 +1,35 @@
+<h1 mat-dialog-title>{{titleDialog}}</h1>
+<form [formGroup]="dialogForm">
+    <div mat-dialog-content>
+        <mat-form-field appearance="outline">
+            <mat-label>Nombre del proyecto</mat-label>
+            <input matInput formControlName="nombre">
+        </mat-form-field>
+        <mat-form-field  appearance="outline">
+            <mat-label>Descripcion</mat-label>
+            <textarea matInput
+                        formControlName="descripcion"
+                        cdkTextareaAutosize
+                        #autosize="cdkTextareaAutosize"
+                        cdkAutosizeMinRows="1"
+                        cdkAutosizeMaxRows="9">
+            </textarea>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>URL del proyecto</mat-label>
+            <input matInput formControlName="link">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>URL de preview imagen</mat-label>
+            <input matInput formControlName="previewImgFuente">
+        </mat-form-field>
+    </div>
+</form>
+
+<div mat-dialog-actions align="end">
+    <div *ngIf="inputDataDialog.intencion!=='crear'">
+        <button  mat-button (click)="cerrarDialog('eliminar')"> Eliminar</button>
+      </div>
+    <button mat-button (click)="cerrarDialog('cancelar')">Cancelar</button>
+    <button mat-button cdkFocusInitial (click)="cerrarDialog('confirmar')">{{actionBtn}}</button>
+</div>

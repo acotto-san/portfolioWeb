@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog'
+import { IODataDialog } from 'src/app/intefaces/iodata-dialog';
 import { ExperienciaLaboral } from 'src/app/models/experiencia-laboral';
 import { ExperienciaPuesto } from 'src/app/models/experiencia-puesto';
 
@@ -20,7 +21,7 @@ export class PuestoDialogComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<PuestoDialogComponent>,
     private formBuilder:FormBuilder,
-    @Inject(MAT_DIALOG_DATA) public data: any,
+    @Inject(MAT_DIALOG_DATA) public inputDataDialog: IODataDialog,
   ) { }
 
   ngOnInit(): void {
@@ -30,24 +31,25 @@ export class PuestoDialogComponent implements OnInit {
       fechaFin : ['',Validators.required],
       descripcion : ['',Validators.required]
     });
-    this.evaluarAccion()
+    this.evaluarAccion();
+    //chequeo si al dialog lo estan llamando desde un boton de edicion/creacion
   }
 
   evaluarAccion(){
-    if(this.data.intencion=="editar"){
+    if(this.inputDataDialog.intencion=="editar"){
       this.setearParaEditar()
-    }else if(this.data.intencion=="crear"){
+    }else if(this.inputDataDialog.intencion=="crear"){
       this.setearParaCrear()
     }
   }
   setearParaEditar(){
-    this.tempPuesto = new ExperienciaPuesto(this.data.payload);
+    this.tempPuesto = new ExperienciaPuesto(this.inputDataDialog.payload);
     this.actionBtn = "Editar";
-    this.titleDialog= "Editar datos del puesto"
-    this.cargarFormConInjectData();
+    this.titleDialog= "Editar datos del puesto";
+    this.cargarFormParaEditar();
 
   }
-  cargarFormConInjectData(){
+  cargarFormParaEditar(){
     this.dialogForm.controls["nombre"].setValue(this.tempPuesto.nombre);
     this.dialogForm.controls["fechaInicio"].setValue(this.tempPuesto.fechaInicio);
     this.dialogForm.controls["fechaFin"].setValue(this.tempPuesto.fechaFin);
@@ -55,58 +57,86 @@ export class PuestoDialogComponent implements OnInit {
 
   }
   setearParaCrear(){
-    this.tempExp = new ExperienciaLaboral(this.data.payload);
+    this.tempExp = new ExperienciaLaboral(this.inputDataDialog.payload);
     this.actionBtn="Crear";
-    this.titleDialog = "Agregar un nuevo puesto"
+    this.titleDialog = "Agregar un nuevo puesto";
   }
-  cerrarDialog(intencionDeCierre:'cerrar'|'eliminar'|'confirmar'|'crear'){
+
+  // ESTEcerrarDialog habría que formatearlo para que  quede como el de expDialog
+  cerrarDialog(intencionDeCierre:'cancelar'|'eliminar'|'confirmar'){
     
-    switch(intencionDeCierre){
-      case 'confirmar':
+    if(this.dialogForm.valid){
+      switch(intencionDeCierre){
+        case 'confirmar':
+          
+          switch(this.inputDataDialog.intencion){
+            case 'editar':
+              this.outputDataParaEditar();
+              break;
+            case 'crear':
+              this.outputDataParaCrear(); 
+              break;
+            }
+          break;
         
-        if(this.data.intencion=="editar"){
-          this.modalResponseEditarPuesto();
-        }else if(this.data.intencion=="crear"){
-          this.modalResponseCrearPuesto();   
-        };
-        break;
+        case 'eliminar':
+          this.outputDataParaEliminar();
+          break;
+        
+        case 'cancelar':
+          this.dialogForm.reset();
+          this.dialogRef.close({intencion:'cancelar',payload:null})
+          break;
+      }
+    }
+
+
+    // switch(intencionDeCierre){
+    //   case 'confirmar':
+        
+    //     if(this.inputDataDialog.intencion=="editar"){
+    //       this.outputDataParaEditar();
+    //     }else if(this.inputDataDialog.intencion=="crear"){
+    //       this.outputDataParaCrear();   
+    //     };
+    //     break;
       
-      case 'eliminar':
-        this.modalResponseEliminarPuesto();
-        break;
+    //   case 'eliminar':
+    //     this.outputDataParaEliminar();
+    //     break;
       
-      case 'cerrar':
-        this.modalResponceCerradoSinAccion();
-        break;
-    }
+    //   case 'cancelar':
+    //     this.outputDataSinAccion();
+    //     break;
+    // }
   }
-  modalResponseCrearPuesto(){
-    if(this.dialogForm.valid){
-      this.volcarDataDelForm();
-      this.tempExp.puestos.push(this.tempPuesto)
-      this.dialogForm.reset();
-      this.dialogRef.close({intencion:this.data.intencion,payload:this.tempExp})
-    }
-  }
-  modalResponseEditarPuesto(){
-    if(this.dialogForm.valid){
-      this.volcarDataDelForm()
-      this.dialogForm.reset();
-      this.dialogRef.close({intencion:this.data.intencion,payload:this.tempPuesto})
-    }
-  }
-  modalResponceCerradoSinAccion(){
+  outputDataParaCrear(){
+    this.volcarDataDelForm();
+    this.tempExp.puestos.push(this.tempPuesto);
     this.dialogForm.reset();
-    this.dialogRef.close({intencion:'cerrar'})
+    this.dialogRef.close({intencion:this.inputDataDialog.intencion,payload:this.tempExp})
   }
-  modalResponseEliminarPuesto(){
+
+  outputDataParaEditar(){
+    this.volcarDataDelForm();
     this.dialogForm.reset();
-    this.dialogRef.close({intencion:"eliminar",payload:this.data.payload.id})
+    this.dialogRef.close({intencion:this.inputDataDialog.intencion,payload:this.tempPuesto})
   }
+  
+  outputDataSinAccion(){
+    this.dialogForm.reset();
+    this.dialogRef.close({intencion:'cerrar',payloaod:null});
+  }
+
+  outputDataParaEliminar(){
+    this.dialogForm.reset();
+    this.dialogRef.close({intencion:"eliminar",payload:this.inputDataDialog.payload.id})
+  }
+
   volcarDataDelForm(){
-    this.tempPuesto.nombre = this.dialogForm.value.nombre
-    this.tempPuesto.fechaInicio = this.dialogForm.value.fechaInicio
-    this.tempPuesto.fechaFin = this.dialogForm.value.fechaFin
-    this.tempPuesto.descripcion = this.dialogForm.value.descripcion
+    this.tempPuesto.nombre = this.dialogForm.value.nombre;
+    this.tempPuesto.fechaInicio = this.dialogForm.value.fechaInicio;
+    this.tempPuesto.fechaFin = this.dialogForm.value.fechaFin;
+    this.tempPuesto.descripcion = this.dialogForm.value.descripcion;
   }
 }

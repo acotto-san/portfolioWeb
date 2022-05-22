@@ -1,0 +1,36 @@
+<h1 mat-dialog-title>{{titleDialog}}</h1>
+<form [formGroup]="dialogForm">
+    <div mat-dialog-content>
+        <mat-form-field appearance="outline">
+            <mat-label>Nombres</mat-label>
+            <input matInput formControlName="nombrePersona">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Posicion</mat-label>
+            <input matInput formControlName="puestoActual">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Sobre mi</mat-label>
+            <textarea matInput
+                        formControlName="descripcionPersonal"
+                        cdkTextareaAutosize
+                        #autosize="cdkTextareaAutosize"
+                        cdkAutosizeMinRows="1"
+                        cdkAutosizeMaxRows="9">
+            </textarea>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>URL  de avatar</mat-label>
+            <input matInput formControlName="avatarImgFuente">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>URL de banner</mat-label>
+            <input matInput formControlName="bannerImgFuente">
+        </mat-form-field>
+    </div>
+</form>
+
+<div mat-dialog-actions align="end">
+    <button mat-button (click)="cerrarDialog('cancelar')">Cancelar</button>
+    <button mat-button cdkFocusInitial (click)="cerrarDialog('confirmar')">{{actionBtn}}</button>
+</div>

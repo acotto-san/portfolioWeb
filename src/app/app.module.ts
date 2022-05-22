@@ -26,6 +26,10 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatSelectModule} from '@angular/material/select';
 
 import { ExperienciaDialogComponent } from './components/dialogs/experiencia-dialog/experiencia-dialog.component';
+import { BannerDialogComponent } from './components/dialogs/banner-dialog/banner-dialog.component';
+import { ProyectoDialogComponent } from './components/dialogs/proyecto-dialog/proyecto-dialog.component';
+import { SkillDialogComponent } from './components/dialogs/skill-dialog/skill-dialog.component';
+import { EstudioDialogComponent } from './components/dialogs/estudio-dialog/estudio-dialog.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,11 @@ import { ExperienciaDialogComponent } from './components/dialogs/experiencia-dia
     Mock2Component,
     CurriculumComponent,
     PuestoDialogComponent,
-    ExperienciaDialogComponent
+    ExperienciaDialogComponent,
+    BannerDialogComponent,
+    ProyectoDialogComponent,
+    SkillDialogComponent,
+    EstudioDialogComponent,
   ],
   imports: [
     FormsModule,

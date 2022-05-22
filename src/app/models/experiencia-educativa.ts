@@ -20,4 +20,8 @@ export class ExperienciaEducativa {
         this.linkValidacion = obj.linkValidacion;
         this.credencialImg = new Imagen(obj.credencialImg)
     }
+
+    // constructor(obj:Partial<ExperienciaLaboral>){
+    //     Object.assign(this,obj)
+    // }
 }

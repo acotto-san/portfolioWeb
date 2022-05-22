@@ -24,6 +24,10 @@
             <input matInput formControlName="ubicacion">
         </mat-form-field>
 
+        <mat-form-field appearance="outline">
+            <mat-label>URL de logo empresa</mat-label>
+            <input matInput formControlName="logoImgFuente">
+        </mat-form-field>
        
       </div>
 </form>
@@ -31,10 +35,10 @@
 
 
 <div mat-dialog-actions align="end">
-  <div *ngIf="data.intencion!=='crear'">
+  <div *ngIf="inputDataDialog.intencion!=='crear'">
     <button  mat-button (click)="cerrarDialog('eliminar')"> Eliminar</button>
   </div>
-  <button mat-button (click)="cerrarDialog('cerrar')">Cerrar</button>
+  <button mat-button (click)="cerrarDialog('cancelar')">Cancelar</button>
   <button mat-button cdkFocusInitial (click)="cerrarDialog('confirmar')">{{actionBtn}}</button>
 </div>
 
